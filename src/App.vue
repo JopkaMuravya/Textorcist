@@ -54,8 +54,8 @@ html, body, #app {
   padding: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden; /* Убираем любые скроллы */
-  background: none; /* На случай, если у body есть фон */
+  overflow: hidden;
+  background: none; 
 }
 
 </style>

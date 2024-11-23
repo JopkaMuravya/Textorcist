@@ -1,10 +1,10 @@
 <template>
   <div id="game-container" :class="{ 'error-shake': isError }">
-    <div id="word-container">
+    <div id="word-container" :class="{ error: isError }">
       <span
         v-for="(letter, index) in currentWord"
         :key="index"
-        :class="[getLetterClass(index), { error: isError }]"
+        :class="{ correct: index < typedWord.length }"
       >
         {{ letter }}
       </span>
@@ -18,42 +18,45 @@
 
 <script>
 export default {
-  name: 'GameComponent',
+  name: "GameComponent",
   data() {
     return {
       words: [
-        'арбуз', 'банан', 'яблоко', 'груша', 'персик', 'пицца', 'суши', 'пельмени',
-        'кот', 'собака', 'волк', 'тигр', 'лев', 'жираф', 'слон', 'попугай',
-        'река', 'гора', 'лес', 'луна', 'солнце', 'ветер', 'дождь', 'облако',
-        'поезд', 'самолет', 'машина', 'трамвай', 'катер', 'велосипед',
-        'учитель', 'врач', 'повар', 'строитель', 'полицейский', 'пожарный',
-        'компьютер', 'телефон', 'стол', 'книга', 'лампа', 'часы', 'ручка',
-        'игра', 'танец', 'звезда', 'мечта', 'праздник', 'работа', 'дружба'
+        "арбуз", "банан", "яблоко", "груша", "персик", "пицца", "суши", "пельмени",
+        "кот", "собака", "волк", "тигр", "лев", "жираф", "слон", "попугай",
+        "река", "гора", "лес", "луна", "солнце", "ветер", "дождь", "облако",
+        "поезд", "самолет", "машина", "трамвай", "катер", "велосипед",
+        "учитель", "врач", "повар", "строитель", "полицейский", "пожарный",
+        "компьютер", "телефон", "стол", "книга", "лампа", "часы", "ручка",
+        "игра", "танец", "звезда", "мечта", "праздник", "работа", "дружба",
       ],
       currentWord: [],
-      typedWord: '',
+      typedWord: "",
       isError: false,
     };
   },
   methods: {
     endGame() {
-      this.$emit('game-ended');
+      this.$emit("game-ended");
     },
     generateWord() {
       const randomIndex = Math.floor(Math.random() * this.words.length);
-      this.currentWord = this.words[randomIndex].split('');
-      this.typedWord = '';
+      this.currentWord = this.words[randomIndex].split("");
+      this.typedWord = "";
+      this.isError = false;
     },
     handleInput(event) {
       const input = event.key;
-      if (input === this.currentWord[this.typedWord.length]) {
+      const currentLetterIndex = this.typedWord.length;
+
+      if (input === this.currentWord[currentLetterIndex]) {
         this.typedWord += input;
-        if (this.typedWord === this.currentWord.join('')) {
+        if (this.typedWord === this.currentWord.join("")) {
           this.generateWord();
         }
       } else {
         this.showError();
-        this.typedWord = '';
+        this.typedWord = "";
       }
     },
     showError() {
@@ -62,22 +65,19 @@ export default {
         this.isError = false;
       }, 500);
     },
-    getLetterClass(index) {
-      return index < this.typedWord.length ? 'correct' : '';
-    },
   },
   mounted() {
     this.generateWord();
-    window.addEventListener('keydown', this.handleInput);
+    window.addEventListener("keydown", this.handleInput);
   },
   beforeUnmount() {
-    window.removeEventListener('keydown', this.handleInput);
+    window.removeEventListener("keydown", this.handleInput);
   },
 };
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 #game-container {
   display: flex;
@@ -88,12 +88,13 @@ export default {
   width: 100vw;
   margin: 0;
   padding: 0;
-  background-image: url('@/assets/background.png');
+  background-image: url("@/assets/background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
-  font-family: 'Press Start 2P', sans-serif;
+  font-family: "Press Start 2P", sans-serif;
+  position: relative;
 }
 
 #game-container.error-shake {
@@ -101,11 +102,21 @@ export default {
 }
 
 @keyframes shake {
-  0% { transform: translateX(-5px); }
-  25% { transform: translateX(5px); }
-  50% { transform: translateX(-5px); }
-  75% { transform: translateX(5px); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(-5px);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 #word-container {
@@ -121,19 +132,25 @@ export default {
   justify-content: center;
 }
 
-#word-container span.correct {
-  color: green;
-}
-
-#word-container span.error {
+#word-container.error {
   color: red;
   animation: flash 0.5s;
 }
 
 @keyframes flash {
-  0% { opacity: 1; }
-  50% { opacity: 0.5; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#word-container span.correct {
+  color: green;
 }
 
 #character {
