@@ -48,4 +48,14 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+html, body, #app {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Убираем любые скроллы */
+  background: none; /* На случай, если у body есть фон */
+}
+
 </style>
