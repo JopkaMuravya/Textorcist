@@ -1,8 +1,9 @@
 <template>
   <div class="main-menu">
     <h1>Главное меню</h1>
-    <button @click="startGame">Начать игру</button>
+    <button @click="$router.push('/game')">Начать игру</button>
     <button @click="openSettings">Настройки</button>
+    <button @click="$router.push('/register')">Зарегистрироваться</button>
     <button @click="exitGame">Выход</button>
   </div>
 </template>
@@ -11,17 +12,13 @@
 export default {
   name: 'MainMenu',
   methods: {
-    startGame() {
-      // Логика для начала игры
-      this.$emit('start-game');
-    },
     openSettings() {
       // Логика для открытия настроек
-      this.$emit('open-settings');
+      alert('Настройки будут реализованы позже');
     },
     exitGame() {
       // Логика для выхода из игры
-      this.$emit('exit-game');
+      window.close();
     }
   }
 }

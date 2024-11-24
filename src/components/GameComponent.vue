@@ -12,7 +12,7 @@
     <div id="character">
       <img src="@/assets/main_character.png" alt="Персонаж" />
     </div>
-    <button @click="endGame">Вернуться в меню</button>
+    <button @click="$router.push('/')">Вернуться в меню</button>
   </div>
 </template>
 
@@ -36,9 +36,6 @@ export default {
     };
   },
   methods: {
-    endGame() {
-      this.$emit("game-ended");
-    },
     generateWord() {
       const randomIndex = Math.floor(Math.random() * this.words.length);
       this.currentWord = this.words[randomIndex].split("");

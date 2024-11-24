@@ -1,41 +1,12 @@
 <template>
   <div id="app">
-    <MainMenu v-if="!isGameStarted" @start-game="startGame" @open-settings="openSettings" @exit-game="exitGame" />
-    <GameComponent v-if="isGameStarted" @game-ended="endGame" />
+    <router-view />
   </div>
 </template>
 
 <script>
-import MainMenu from './components/MainMenu.vue';
-import GameComponent from './components/GameComponent.vue'; // Предположим, что у вас есть компонент игры
-
 export default {
   name: 'App',
-  components: {
-    MainMenu,
-    GameComponent
-  },
-  data() {
-    return {
-      isGameStarted: false,
-    };
-  },
-  methods: {
-    startGame() {
-      this.isGameStarted = true;
-    },
-    openSettings() {
-      // Здесь вы можете открыть компонент настроек или модальное окно
-      alert('Настройки будут реализованы позже.');
-    },
-    exitGame() {
-      // Закрытие приложения
-      window.close(); // Это закроет окно Electron
-    },
-    endGame() {
-      this.isGameStarted = false; // Возвращает в главное меню
-    }
-  }
 }
 </script>
 
