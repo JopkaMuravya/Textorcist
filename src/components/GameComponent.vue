@@ -13,6 +13,9 @@
       <img src="@/assets/main_character.png" alt="Персонаж" />
     </div>
     <button @click="$router.push('/')">Вернуться в меню</button>
+    <div id="score-board">
+      Рекорд: {{ record }}
+    </div>
   </div>
 </template>
 
@@ -33,6 +36,7 @@ export default {
       currentWord: [],
       typedWord: "",
       isError: false,
+      record: 0, 
     };
   },
   methods: {
@@ -49,6 +53,7 @@ export default {
       if (input === this.currentWord[currentLetterIndex]) {
         this.typedWord += input;
         if (this.typedWord === this.currentWord.join("")) {
+          this.record++; 
           this.generateWord();
         }
       } else {
@@ -177,5 +182,17 @@ button {
 
 button:hover {
   background-color: rgba(255, 255, 255, 1);
+}
+
+#score-board {
+  position: absolute;
+  bottom: 25px;
+  right: 30px;
+  font-size: 14px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-family: "Press Start 2P", sans-serif;
 }
 </style>
