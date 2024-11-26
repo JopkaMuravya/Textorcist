@@ -27,15 +27,26 @@ export default {
   methods: {
     async register() {
       try {
-        await axios.post("http://127.0.0.1:8000/api/users/", {
+        const response = await axios.post("http://127.0.0.1:8000/api/users/", {
           username: this.username,
           email: this.email,
           password: this.password,
         });
+
+        localStorage.setItem(
+          "currentUser",
+          JSON.stringify({
+            name: response.data.username,
+          })
+        );
+
         this.message = "Регистрация успешна!";
+        
         this.username = "";
         this.email = "";
         this.password = "";
+
+        this.$router.push("/");
       } catch (error) {
         if (error.response) {
           this.message = "Ошибка регистрации: " + error.response.data;

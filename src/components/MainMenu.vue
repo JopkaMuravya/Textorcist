@@ -1,6 +1,6 @@
 <template>
   <div id="main-menu-container">
-    <div id="user-info">
+    <div id="user-info" @click="logout">
       <img :src="user.avatar" alt="Avatar" />
       <div>
         <p>{{ user.name }}</p>
@@ -37,6 +37,22 @@ export default {
     exitGame() {
       window.close();
     },
+    logout() {
+      localStorage.removeItem("currentUser");
+      this.user = {
+        name: "Анонимус",
+        avatar: require("@/assets/default_avatar.png"),
+        record: 0,
+      };
+      this.$router.push("/register");
+    },
+  },
+  mounted() {
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    if (currentUser) {
+      this.user.name = currentUser.name || "Анонимус";
+      this.user.avatar = require("@/assets/default_avatar.png"); 
+    }
   },
 };
 </script>
