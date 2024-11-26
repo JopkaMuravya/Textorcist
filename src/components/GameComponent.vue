@@ -19,6 +19,9 @@
         </div>
         <button @click="$router.push('/')">Вернуться в меню</button>
         <div id="score">Счёт: {{ score }}</div>
+        <div v-for="(enemy, index) in enemies" :key="index" class="enemy" :style="{ left: enemy.x + 'px', top: enemy.y + 'px' }">
+          <img :src="enemyImage" alt="Враг" />
+        </div>
 
     </div>
 </template>
@@ -44,6 +47,11 @@ export default {
       hearts: [ { broken: false }, { broken: false }, { broken: false } ],
       liveheartImage: require('@/assets/live.png'),
       deadheartImage: require('@/assets/dead.png'),
+
+      // enemies
+      enemies: [],
+      enemyImage: require('@/assets/book.png'),
+      enemySpeed: 1,
     };
   },
   methods: {
@@ -61,6 +69,7 @@ export default {
         this.typedWord += input;
         if (this.typedWord === this.currentWord.join("")) {
           this.score += 10
+          this.enemies.splice(0, 1)
           this.generateWord();
         }
       } else {
@@ -78,27 +87,120 @@ export default {
         this.isError = false;
       }, 500);
 
-      const lifeIndex = this.hearts.findIndex(heart => !heart.broken);
-      if (lifeIndex !== -1) {
+      // const lifeIndex = this.hearts.findIndex(heart => !heart.broken);
+      // if (lifeIndex !== -1) {
 
-        this.hearts[lifeIndex].broken = true;
+      //   this.hearts[lifeIndex].broken = true;
 
-        setTimeout(() => {
-          this.hearts.splice(lifeIndex, 1);
-          if (this.hearts.length === 0) {
-            const scoree = this.score;
-            //console.log('Game Over! Score:', scoree);
-            this.$router.push({ name: 'GameOver', query: { score: scoree } });
-          }
+      //   setTimeout(() => {
+      //     this.hearts.splice(lifeIndex, 1);
+      //     if (this.hearts.length === 0) {
+      //       const scoree = this.score;
+      //       //console.log('Game Over! Score:', scoree);
+      //       this.$router.push({ name: 'GameOver', query: { score: scoree } });
+      //     }
 
-        }, 500);
+      //   }, 500);
 
+      // }
+    },
+    // enemies
+    generateEnemy() {
+      const side = Math.floor(Math.random() * 4);
+      let x, y, speed;
+
+      switch (side) {
+        case 0: // Сверху
+          x = window.innerWidth / 2 - 100;
+          y = -30;
+          break;
+        case 1: // Снизу
+          x = window.innerWidth / 2 - 100;
+          y = window.innerHeight + 15;
+          break;
+        case 2: // Слева
+          x = -100;
+          y = window.innerHeight / 2;
+          break;
+        case 3: // Справа
+          x = window.innerWidth - 50;
+          y = window.innerHeight / 2;
+          break;
       }
+      speed = this.enemySpeed + this.score / 100;
+      this.enemies.push({x, y, side, speed});
+      setTimeout(() => {this.generateEnemy();}, 2000 - this.score);
+    },
+    updateEnemies() {
+      this.enemies.forEach((enemy, index) => {
+
+        switch (enemy.side) {
+          case 0:
+            enemy.y += enemy.speed;
+            if (enemy.y % 100 === 0) {
+              enemy.x += 3;
+            }
+            if (enemy.y % 100 === 50) {
+              enemy.x -= 3;
+            }
+            break;
+          case 1:
+            enemy.y -= enemy.speed;
+            if (enemy.y % 100 === 0) {
+              enemy.x += 3;
+            }
+            if (enemy.y % 100 === 50) {
+              enemy.x -= 3;
+            }
+            break;
+          case 2:
+            enemy.x += enemy.speed;
+            if (enemy.x % 100 === 0) {
+              enemy.y += 3;
+            }
+            if (enemy.x % 100 === 50) {
+              enemy.y -= 3;
+            }
+            break;
+          case 3:
+            enemy.x -= enemy.speed;
+            if (enemy.x % 100 === 0) {
+              enemy.y += 3;
+            }
+            if (enemy.x % 100 === 50) {
+              enemy.y -= 3;
+            }
+            break;
+        }
+
+        if (enemy.x >= window.innerWidth / 2 - 120 && enemy.x <= window.innerWidth / 2 - 75 && enemy.y >= window.innerHeight / 2 - 50 && enemy.y <= window.innerHeight / 2 + 50) {
+          this.enemies.splice(index, 1);
+          const lifeIndex = this.hearts.findIndex(heart => !heart.broken);
+          if (lifeIndex !== -1) {
+            this.hearts[lifeIndex].broken = true;
+            setTimeout(() => {
+              this.hearts.splice(lifeIndex, 1);
+              if (this.hearts.length === 0) {
+                const scoree = this.score;
+                //console.log('Game Over! Score:', scoree);
+                this.$router.push({ name: 'GameOver', query: { score: scoree } });
+              }
+            }, 500);
+          }
+        }
+      });
+    },
+    gameLoop() {
+      this.updateEnemies();
+      requestAnimationFrame(this.gameLoop);
     },
   },
   mounted() {
     this.generateWord();
     window.addEventListener("keydown", this.handleInput);
+    this.generateEnemy();
+    this.gameLoop();
+
   },
   beforeUnmount() {
     window.removeEventListener("keydown", this.handleInput);
@@ -175,7 +277,8 @@ export default {
 
 #word-container {
   position: absolute;
-  top: 38%;
+  top: 47%;
+  margin-left: 25px;
   font-size: 15px;
   line-height: 1;
   font-weight: 400;
@@ -208,7 +311,8 @@ export default {
 }
 
 #character {
-  margin-top: 80px;
+  margin-top: 220px;
+  margin-left: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -245,5 +349,11 @@ button:hover {
     color: azure;
     padding: 5px 10px 5px 10px;
     border-radius: 5px;
+}
+
+.enemy {
+  position:absolute;
+  width: 50px;
+  height: auto;
 }
 </style>
