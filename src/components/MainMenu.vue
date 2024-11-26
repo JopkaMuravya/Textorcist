@@ -13,7 +13,7 @@
           <button class = "menu-button" @click="openSettings">Настройки</button>
         </div>
         <div id="bottom-middle">
-          <button class = "menu-button" @click="startGame">Начать игру</button>
+          <button class = "menu-button startgame-btn" @click="startGame">Начать игру</button>
         </div>
         <div id="bottom-right">
           <button class = "menu-button" @click="exitGame">Выход</button>
@@ -83,12 +83,15 @@ export default {
 .btn-cont-div {
   padding-left: 15%;
   padding-right: 15%;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 #bottom-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+
+  margin-top: calc(20px - 1vw);
 }
 #middle-container {
   display: flex;
@@ -100,21 +103,35 @@ export default {
 }
 .menu-button {
   background-color: #7B6E62;
-  font-size: 1.12em;
+  font-size: 1.1rem;
   border: #000000;
   border-radius: 15px;
   border-width: 100px;
-  width: 150px;
-  height: 50;
   stroke-width: 5px;
   border-color: #000000;
   box-shadow: 3px 3px 2px 1px #000000;
 
-  margin: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
   /* padding: 10px 20px; */
   width: 20vw;
   height: 6vw;
-  font-family: 'Krona One'
+
+  font-family: 'Pixy';
+}
+
+.startgame-btn {
+  width: 22vw;
+  height: 8vw;
+  font-size: 1.4rem;
+}
+
+.menu-button:hover {
+  box-shadow: 5px 5px 6px 1px #000000;
+}
+.menu-button:active {
+  transform: translateY(3px);
+  box-shadow: 5px 2px 3px 1px #000000;
 }
 
 </style>

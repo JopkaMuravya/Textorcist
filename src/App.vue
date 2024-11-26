@@ -1,5 +1,4 @@
 <template>
-  <link href='https://fonts.googleapis.com/css?family=Krona One' rel='stylesheet'>
   <div id="app">
     <MainMenu v-if="!isGameStarted" @start-game="startGame" @open-settings="openSettings" @exit-game="exitGame" />
     <GameComponent v-if="isGameStarted" @game-ended="endGame" />
@@ -57,6 +56,15 @@ html, body, #app {
   height: 100%;
   overflow: hidden;
   background: none; 
+}
+
+@font-face {
+  font-family: "Pixy";
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+  /* unicode-range: U+000-5FF; */
+  src: local("Pixy"), url("~@/../public/fonts/Pixy.ttf");
 }
 
 </style>
