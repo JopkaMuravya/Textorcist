@@ -1,5 +1,9 @@
 <template>
   <div id="registration-container">
+    <div id="login-link-container">
+      <p>Уже есть аккаунт?</p>
+      <button @click="$router.push('/login')">Войти</button>
+    </div>
     <h1 id="registration-title">Регистрация</h1>
     <form @submit.prevent="register">
       <input type="text" v-model="username" placeholder="Имя пользователя" required />
@@ -96,6 +100,38 @@ export default {
   z-index: 2;
 }
 
+#login-link-container {
+  position: absolute;
+  top: 30px; 
+  right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+}
+
+#login-link-container p {
+  color: white;
+  font-size: 12px;
+  font-family: "Press Start 2P", sans-serif;
+  margin: 0;
+}
+
+#login-link-container button {
+  padding: 4px 12px; 
+  font-size: 10px; 
+  font-family: "Press Start 2P", sans-serif;
+  border: 2px solid rgba(255, 165, 0, 0.8);
+  border-radius: 8px;
+  background-color: rgba(255, 165, 0, 0.85);
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#login-link-container button:hover {
+  background-color: rgba(255, 140, 0, 0.9);
+}
+
 #registration-title {
   color: white;
   font-size: 24px;
@@ -183,5 +219,4 @@ button:not([type="submit"]):hover {
   font-family: "Press Start 2P", sans-serif;
   text-align: center;
 }
-
 </style>
