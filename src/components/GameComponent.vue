@@ -168,7 +168,7 @@ export default {
 
 @keyframes dying {
     transform: scale(0.5);
-    opacity: 0; 
+    opacity: 0;
 }
 
 #word-container {
