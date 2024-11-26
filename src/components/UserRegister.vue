@@ -53,7 +53,7 @@ export default {
         this.$router.push("/");
       } catch (error) {
         if (error.response) {
-          this.message = "Ошибка регистрации: " + error.response.data;
+          this.message = "Ошибка регистрации: " + JSON.stringify(error.response.data);
         } else if (error.request) {
           this.message = "Ошибка: сервер не ответил";
         } else {
