@@ -17,10 +17,17 @@
         <div id="character">
             <img src="@/assets/main_character.png" alt="Персонаж" />
         </div>
-        <button @click="$router.push('/')">Вернуться в меню</button>
         <div id="score">Счёт: {{ score }}</div>
         <div v-for="(enemy, index) in enemies" :key="index" class="enemy" :style="{ left: enemy.x + 'px', top: enemy.y + 'px' }">
           <img :src="enemyImage" alt="Враг" />
+        </div>
+
+        <div v-if="isPaused" class="modal">
+            <div class="modal-content">
+                <h2>Пауза</h2>
+                <button @click="togglePause">Продолжить</button>
+                <button @click="$router.push('/')">Выход</button>
+            </div>
         </div>
 
     </div>
@@ -52,9 +59,15 @@ export default {
       enemies: [],
       enemyImage: require('@/assets/book.png'),
       enemySpeed: 1,
+
+      // pause
+      isPaused: false
     };
   },
   methods: {
+    togglePause() {
+      this.isPaused = !this.isPaused;
+    },
     generateWord() {
       const randomIndex = Math.floor(Math.random() * this.words.length);
       this.currentWord = this.words[randomIndex].split("");
@@ -65,20 +78,25 @@ export default {
       const input = event.key;
       const currentLetterIndex = this.typedWord.length;
 
-      if (input === this.currentWord[currentLetterIndex]) {
-        this.typedWord += input;
-        if (this.typedWord === this.currentWord.join("")) {
-          this.score += 10
-          this.enemies.splice(0, 1)
-          this.generateWord();
+      if (input === 'Escape'){
+          this.togglePause();
+      }      
+      if (!this.isPaused && input != 'Alt' && input != 'Shift' && input != 'Escape'){
+        if (input === this.currentWord[currentLetterIndex]) {
+          this.typedWord += input;
+          if (this.typedWord === this.currentWord.join("")) {
+            this.score += 10
+            this.enemies.splice(0, 1)
+            this.generateWord();
+          }
+        } else {
+          //this.showError();
+          this.typedWord = "";
+          if (this.score > 0) {
+            this.score -= 5;
+          }
+          this.showError();
         }
-      } else {
-        //this.showError();
-        this.typedWord = "";
-        if (this.score > 0) {
-          this.score -= 5;
-        }
-        this.showError();
       }
     },
     showError() {
@@ -128,7 +146,9 @@ export default {
           break;
       }
       speed = this.enemySpeed + this.score / 100;
-      this.enemies.push({x, y, side, speed});
+      if (!this.isPaused){
+        this.enemies.push({x, y, side, speed});
+      }
       setTimeout(() => {this.generateEnemy();}, 2000 - this.score);
     },
     updateEnemies() {
@@ -191,7 +211,9 @@ export default {
       });
     },
     gameLoop() {
-      this.updateEnemies();
+      if (!this.isPaused){
+        this.updateEnemies();
+      }
       requestAnimationFrame(this.gameLoop);
     },
   },
@@ -355,5 +377,37 @@ button:hover {
   position:absolute;
   width: 50px;
   height: auto;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+}
+
+.modal-content {
+  font-family: "Press Start 2P", sans-serif;
+  padding: 325px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: white;
+}
+
+.modal-content button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #751c6991;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: "Press Start 2P", sans-serif;;
 }
 </style>
