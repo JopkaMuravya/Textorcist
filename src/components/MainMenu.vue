@@ -1,5 +1,12 @@
 <template>
   <div id="main-menu-container">
+    <div id="user-info">
+      <img :src="user.avatar" alt="Avatar" />
+      <div>
+        <p>{{ user.name }}</p>
+        <p>Личный рекорд: {{ user.record }}</p>
+      </div>
+    </div>
     <h1 id="main-menu-title">Textorcist</h1>
     <div id="main-menu-buttons">
       <button @click="$router.push('/game')">Начать игру</button>
@@ -14,6 +21,15 @@
 <script>
 export default {
   name: "MainMenu",
+  data() {
+    return {
+      user: {
+        name: "Анонимус",
+        avatar: require("@/assets/default_avatar.png"),
+        record: 0,
+      },
+    };
+  },
   methods: {
     openSettings() {
       alert("Настройки будут реализованы позже");
@@ -101,4 +117,51 @@ button:hover {
 button:active {
   background-color: #ccc;
 }
+
+#user-info {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.85); 
+  padding: 10px; 
+  border-radius: 12px; 
+  color: white;
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 10px; 
+  gap: 10px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3); 
+}
+
+#user-info img {
+  width: 40px; 
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+  object-fit: cover;
+}
+
+#user-info div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#user-info p {
+  margin: 3px 0; 
+}
+
+#user-info p:first-child {
+  font-size: 12px; 
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.5); 
+}
+
+#user-info p:last-child {
+  font-size: 10px; 
+  color: #bbb; 
+}
+
 </style>
