@@ -1,0 +1,478 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\components\\GameComponent.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\GameComponent.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\components\\GameOver.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\GameOver.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\router\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\router\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\components\\MainMenu.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\MainMenu.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\Django\\users\\views.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Django\\users\\views.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\Django\\users\\tests.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Django\\users\\tests.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\public\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:public\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\background.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\background.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\babel.config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:babel.config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\vue.config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:vue.config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\App.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\App.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\components\\UserRegister.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\UserRegister.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\components\\HelloWorld.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\HelloWorld.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\package-lock.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:package-lock.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\jsconfig.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:jsconfig.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\assets\\book_dead_1.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\assets\\book_dead_1.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\assets\\book.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\assets\\book.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\assets\\book_dead_3.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\assets\\book_dead_3.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\assets\\logo.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\assets\\logo.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\assets\\main_character.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\assets\\main_character.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\Django\\users\\__init__.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Django\\users\\__init__.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\Django\\requirements.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Django\\requirements.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\Django\\manage.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Django\\manage.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GameOver.vue",
+              "DocumentMoniker": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\components\\GameOver.vue",
+              "RelativeDocumentMoniker": "src\\components\\GameOver.vue",
+              "ToolTip": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\components\\GameOver.vue",
+              "RelativeToolTip": "src\\components\\GameOver.vue",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003491|",
+              "WhenOpened": "2024-11-25T16:11:22.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GameComponent.vue",
+              "DocumentMoniker": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\components\\GameComponent.vue",
+              "RelativeDocumentMoniker": "src\\components\\GameComponent.vue",
+              "ToolTip": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\components\\GameComponent.vue",
+              "RelativeToolTip": "src\\components\\GameComponent.vue",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAAAF8AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003491|",
+              "WhenOpened": "2024-11-25T12:05:40.408Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainMenu.vue",
+              "DocumentMoniker": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\components\\MainMenu.vue",
+              "RelativeDocumentMoniker": "src\\components\\MainMenu.vue",
+              "ToolTip": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\components\\MainMenu.vue",
+              "RelativeToolTip": "src\\components\\MainMenu.vue",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003491|",
+              "WhenOpened": "2024-11-25T12:04:53.382Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "index.js",
+              "DocumentMoniker": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\router\\index.js",
+              "RelativeDocumentMoniker": "src\\router\\index.js",
+              "ToolTip": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\router\\index.js",
+              "RelativeToolTip": "src\\router\\index.js",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABkAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-25T16:00:59.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\public\\index.html",
+              "RelativeDocumentMoniker": "public\\index.html",
+              "ToolTip": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\public\\index.html",
+              "RelativeToolTip": "public\\index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-11-25T10:31:04.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "tests.py",
+              "DocumentMoniker": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\Django\\users\\tests.py",
+              "RelativeDocumentMoniker": "Django\\users\\tests.py",
+              "ToolTip": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\Django\\users\\tests.py",
+              "RelativeToolTip": "Django\\users\\tests.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOJSURBVDhPrZRdaFRHFMf/M/crrlGTDdk0abYmJrbUmNiWQCsFaSUipWnAp/bRB/vSQksQhBZqUCykEQyEPvWlL1Jo8aHQVIRWEFqI1FAfIlI0i3WrIYJba2J2773z1TNz1/UDKRQ87P\u002BemXvn/vacM3MPnqoZY5j1HyydGs\u002BzaPQX9SNfwTXV6bO4I\u002BBJwZdx3tNJ3hMq1BKREgi1cr5JC0RGk5fgpKAqfh7sX/rWAaeWzy5ub\u002BroK3vz\u002BDw\u002Bij62Dr3cR18A9IQK3UGCUBFIWqhC\u002BJhfuZvHWlJZHHjp3lbfAn\u002BT51m714/jV86jebUHNZ6iDIE7TOAPKHARIqkBsmpoLOFLglOEG5BioDfEm10BtPFTy8qA\u002Bhz/K/kJ1ds5BPNLqKxI3FqVkOSl9XUZaRrSQjv/2aetCF4oIL77twNye2nzhLytb6DVix3kwM4DmHpvCgffOYjixqKDFQtFTHw4gZnDMxgeGG6AQb/mMI\u002BQm7gB7AyNfIZq1sIT9/Ku53dh4coCNrdvxomPTyAX5jD33Rx6i70oXSuhp7snA4oMmMN62hiqDZlLucuTqoXQ//AYZYrQKAMVK9TWaoijGGNvjKFULmH/R/shEtGAaUlpGxrD7i3TluUi7AqF7AslNiGL0AJ3v7IbN5dvYvzoOC4uXERbSxtyUQ6F1gK2dG/JYPWUwRkMewjYwaR8ztPgqWgUf/rraRybOYbr5eu4dPkSTp46iQtnLmD2m1kM76jXkP6YQoRihOEZ0KXcrLRs5Qqsxhxw9P3R7AXS/d088sURTB6fRJqkEDGlTTAHJKPorHsQ4QZjZLuSYPGTj4YT1ay6Vn0E5lSvoaalDWCzTmU\u002BTenkPwA8Drtfs0dgNLcYTREyztwuO2BOaLNJ0Lcp1P\u002BCGV1PmUS3nLkaRpRuZD9yemRhk59MYujFoWwlyaY18tbIE2F0XFzxGO2NnbkIOQVtvXuZFh\u002BaOIS9\u002B/Ziz9gejLw98h\u002BwzOyMcnA3HWh\u002BuXuuXa\u002B\u002B9uuf63F1gW7YRxZu19TH1hrzh2zHthx2vvo6KsunfxjcWhnLgDc6f98ovJcDvwWBH6GJNyGyQgjjUSG4R6LUyCtGokpZCQQkGusE927Nfj/YX9nngJcXO76KjHiX\u002BcweKcOpIj7ninOuDefUhrmhnaTe5VHT8qit\u002BpS1Z6iRGWpumlqXYerO9NCzpS8t7yka8C9L2m0aWMo\u002BTAAAAABJRU5ErkJggg==",
+              "WhenOpened": "2024-11-25T11:58:31.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "views.py",
+              "DocumentMoniker": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\Django\\users\\views.py",
+              "RelativeDocumentMoniker": "Django\\users\\views.py",
+              "ToolTip": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\Django\\users\\views.py",
+              "RelativeToolTip": "Django\\users\\views.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOJSURBVDhPrZRdaFRHFMf/M/crrlGTDdk0abYmJrbUmNiWQCsFaSUipWnAp/bRB/vSQksQhBZqUCykEQyEPvWlL1Jo8aHQVIRWEFqI1FAfIlI0i3WrIYJba2J2773z1TNz1/UDKRQ87P\u002BemXvn/vacM3MPnqoZY5j1HyydGs\u002BzaPQX9SNfwTXV6bO4I\u002BBJwZdx3tNJ3hMq1BKREgi1cr5JC0RGk5fgpKAqfh7sX/rWAaeWzy5ub\u002BroK3vz\u002BDw\u002Bij62Dr3cR18A9IQK3UGCUBFIWqhC\u002BJhfuZvHWlJZHHjp3lbfAn\u002BT51m714/jV86jebUHNZ6iDIE7TOAPKHARIqkBsmpoLOFLglOEG5BioDfEm10BtPFTy8qA\u002Bhz/K/kJ1ds5BPNLqKxI3FqVkOSl9XUZaRrSQjv/2aetCF4oIL77twNye2nzhLytb6DVix3kwM4DmHpvCgffOYjixqKDFQtFTHw4gZnDMxgeGG6AQb/mMI\u002BQm7gB7AyNfIZq1sIT9/Ku53dh4coCNrdvxomPTyAX5jD33Rx6i70oXSuhp7snA4oMmMN62hiqDZlLucuTqoXQ//AYZYrQKAMVK9TWaoijGGNvjKFULmH/R/shEtGAaUlpGxrD7i3TluUi7AqF7AslNiGL0AJ3v7IbN5dvYvzoOC4uXERbSxtyUQ6F1gK2dG/JYPWUwRkMewjYwaR8ztPgqWgUf/rraRybOYbr5eu4dPkSTp46iQtnLmD2m1kM76jXkP6YQoRihOEZ0KXcrLRs5Qqsxhxw9P3R7AXS/d088sURTB6fRJqkEDGlTTAHJKPorHsQ4QZjZLuSYPGTj4YT1ay6Vn0E5lSvoaalDWCzTmU\u002BTenkPwA8Drtfs0dgNLcYTREyztwuO2BOaLNJ0Lcp1P\u002BCGV1PmUS3nLkaRpRuZD9yemRhk59MYujFoWwlyaY18tbIE2F0XFzxGO2NnbkIOQVtvXuZFh\u002BaOIS9\u002B/Ziz9gejLw98h\u002BwzOyMcnA3HWh\u002BuXuuXa\u002B\u002B9uuf63F1gW7YRxZu19TH1hrzh2zHthx2vvo6KsunfxjcWhnLgDc6f98ovJcDvwWBH6GJNyGyQgjjUSG4R6LUyCtGokpZCQQkGusE927Nfj/YX9nngJcXO76KjHiX\u002BcweKcOpIj7ninOuDefUhrmhnaTe5VHT8qit\u002BpS1Z6iRGWpumlqXYerO9NCzpS8t7yka8C9L2m0aWMo\u002BTAAAAABJRU5ErkJggg==",
+              "WhenOpened": "2024-11-25T11:58:36.642Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "background.js",
+              "DocumentMoniker": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\background.js",
+              "RelativeDocumentMoniker": "src\\background.js",
+              "ToolTip": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\background.js",
+              "RelativeToolTip": "src\\background.js",
+              "ViewState": "AgIAACYAAAAAAAAAAAAAwA8AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-25T12:01:00.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "babel.config.js",
+              "DocumentMoniker": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\babel.config.js",
+              "RelativeDocumentMoniker": "babel.config.js",
+              "ToolTip": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\babel.config.js",
+              "RelativeToolTip": "babel.config.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-25T12:01:47.463Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "vue.config.js",
+              "DocumentMoniker": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\vue.config.js",
+              "RelativeDocumentMoniker": "vue.config.js",
+              "ToolTip": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\vue.config.js",
+              "RelativeToolTip": "vue.config.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-25T12:02:25.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "main.js",
+              "DocumentMoniker": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\main.js",
+              "RelativeDocumentMoniker": "src\\main.js",
+              "ToolTip": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\main.js",
+              "RelativeToolTip": "src\\main.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-25T12:01:22.851Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "App.vue",
+              "DocumentMoniker": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\App.vue",
+              "RelativeDocumentMoniker": "src\\App.vue",
+              "ToolTip": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\App.vue",
+              "RelativeToolTip": "src\\App.vue",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003491|",
+              "WhenOpened": "2024-11-25T12:00:33.963Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UserRegister.vue",
+              "DocumentMoniker": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\components\\UserRegister.vue",
+              "RelativeDocumentMoniker": "src\\components\\UserRegister.vue",
+              "ToolTip": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\components\\UserRegister.vue",
+              "RelativeToolTip": "src\\components\\UserRegister.vue",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003491|",
+              "WhenOpened": "2024-11-25T12:04:34.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "HelloWorld.vue",
+              "DocumentMoniker": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\components\\HelloWorld.vue",
+              "RelativeDocumentMoniker": "src\\components\\HelloWorld.vue",
+              "ToolTip": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\components\\HelloWorld.vue",
+              "RelativeToolTip": "src\\components\\HelloWorld.vue",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003491|",
+              "WhenOpened": "2024-11-25T12:05:24.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2024-11-25T12:02:22.589Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "jsconfig.json",
+              "DocumentMoniker": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\jsconfig.json",
+              "RelativeDocumentMoniker": "jsconfig.json",
+              "ToolTip": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\jsconfig.json",
+              "RelativeToolTip": "jsconfig.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-25T12:01:53.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-25T12:01:27.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "package-lock.json",
+              "DocumentMoniker": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\package-lock.json",
+              "RelativeDocumentMoniker": "package-lock.json",
+              "ToolTip": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\package-lock.json",
+              "RelativeToolTip": "package-lock.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-25T10:35:14.56Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "package.json",
+              "DocumentMoniker": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\package.json",
+              "RelativeDocumentMoniker": "package.json",
+              "ToolTip": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\package.json",
+              "RelativeToolTip": "package.json",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-25T10:34:33.871Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "book_dead_1.png",
+              "DocumentMoniker": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\assets\\book_dead_1.png",
+              "RelativeDocumentMoniker": "src\\assets\\book_dead_1.png",
+              "ToolTip": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\assets\\book_dead_1.png",
+              "RelativeToolTip": "src\\assets\\book_dead_1.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2024-11-25T12:00:14.88Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "book.png",
+              "DocumentMoniker": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\assets\\book.png",
+              "RelativeDocumentMoniker": "src\\assets\\book.png",
+              "ToolTip": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\assets\\book.png",
+              "RelativeToolTip": "src\\assets\\book.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2024-11-25T12:00:10.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "book_dead_3.png",
+              "DocumentMoniker": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\assets\\book_dead_3.png",
+              "RelativeDocumentMoniker": "src\\assets\\book_dead_3.png",
+              "ToolTip": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\assets\\book_dead_3.png",
+              "RelativeToolTip": "src\\assets\\book_dead_3.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2024-11-25T12:00:06.882Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "logo.png",
+              "DocumentMoniker": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\assets\\logo.png",
+              "RelativeDocumentMoniker": "src\\assets\\logo.png",
+              "ToolTip": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\assets\\logo.png",
+              "RelativeToolTip": "src\\assets\\logo.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2024-11-25T12:00:03.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "main_character.png",
+              "DocumentMoniker": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\assets\\main_character.png",
+              "RelativeDocumentMoniker": "src\\assets\\main_character.png",
+              "ToolTip": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\src\\assets\\main_character.png",
+              "RelativeToolTip": "src\\assets\\main_character.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2024-11-25T11:59:59.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "__init__.py",
+              "DocumentMoniker": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\Django\\users\\__init__.py",
+              "RelativeDocumentMoniker": "Django\\users\\__init__.py",
+              "ToolTip": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\Django\\users\\__init__.py",
+              "RelativeToolTip": "Django\\users\\__init__.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOJSURBVDhPrZRdaFRHFMf/M/crrlGTDdk0abYmJrbUmNiWQCsFaSUipWnAp/bRB/vSQksQhBZqUCykEQyEPvWlL1Jo8aHQVIRWEFqI1FAfIlI0i3WrIYJba2J2773z1TNz1/UDKRQ87P\u002BemXvn/vacM3MPnqoZY5j1HyydGs\u002BzaPQX9SNfwTXV6bO4I\u002BBJwZdx3tNJ3hMq1BKREgi1cr5JC0RGk5fgpKAqfh7sX/rWAaeWzy5ub\u002BroK3vz\u002BDw\u002Bij62Dr3cR18A9IQK3UGCUBFIWqhC\u002BJhfuZvHWlJZHHjp3lbfAn\u002BT51m714/jV86jebUHNZ6iDIE7TOAPKHARIqkBsmpoLOFLglOEG5BioDfEm10BtPFTy8qA\u002Bhz/K/kJ1ds5BPNLqKxI3FqVkOSl9XUZaRrSQjv/2aetCF4oIL77twNye2nzhLytb6DVix3kwM4DmHpvCgffOYjixqKDFQtFTHw4gZnDMxgeGG6AQb/mMI\u002BQm7gB7AyNfIZq1sIT9/Ku53dh4coCNrdvxomPTyAX5jD33Rx6i70oXSuhp7snA4oMmMN62hiqDZlLucuTqoXQ//AYZYrQKAMVK9TWaoijGGNvjKFULmH/R/shEtGAaUlpGxrD7i3TluUi7AqF7AslNiGL0AJ3v7IbN5dvYvzoOC4uXERbSxtyUQ6F1gK2dG/JYPWUwRkMewjYwaR8ztPgqWgUf/rraRybOYbr5eu4dPkSTp46iQtnLmD2m1kM76jXkP6YQoRihOEZ0KXcrLRs5Qqsxhxw9P3R7AXS/d088sURTB6fRJqkEDGlTTAHJKPorHsQ4QZjZLuSYPGTj4YT1ay6Vn0E5lSvoaalDWCzTmU\u002BTenkPwA8Drtfs0dgNLcYTREyztwuO2BOaLNJ0Lcp1P\u002BCGV1PmUS3nLkaRpRuZD9yemRhk59MYujFoWwlyaY18tbIE2F0XFzxGO2NnbkIOQVtvXuZFh\u002BaOIS9\u002B/Ziz9gejLw98h\u002BwzOyMcnA3HWh\u002BuXuuXa\u002B\u002B9uuf63F1gW7YRxZu19TH1hrzh2zHthx2vvo6KsunfxjcWhnLgDc6f98ovJcDvwWBH6GJNyGyQgjjUSG4R6LUyCtGokpZCQQkGusE927Nfj/YX9nngJcXO76KjHiX\u002BcweKcOpIj7ninOuDefUhrmhnaTe5VHT8qit\u002BpS1Z6iRGWpumlqXYerO9NCzpS8t7yka8C9L2m0aWMo\u002BTAAAAABJRU5ErkJggg==",
+              "WhenOpened": "2024-11-25T11:58:51.503Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "manage.py",
+              "DocumentMoniker": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\Django\\manage.py",
+              "RelativeDocumentMoniker": "Django\\manage.py",
+              "ToolTip": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\Django\\manage.py",
+              "RelativeToolTip": "Django\\manage.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOJSURBVDhPrZRdaFRHFMf/M/crrlGTDdk0abYmJrbUmNiWQCsFaSUipWnAp/bRB/vSQksQhBZqUCykEQyEPvWlL1Jo8aHQVIRWEFqI1FAfIlI0i3WrIYJba2J2773z1TNz1/UDKRQ87P\u002BemXvn/vacM3MPnqoZY5j1HyydGs\u002BzaPQX9SNfwTXV6bO4I\u002BBJwZdx3tNJ3hMq1BKREgi1cr5JC0RGk5fgpKAqfh7sX/rWAaeWzy5ub\u002BroK3vz\u002BDw\u002Bij62Dr3cR18A9IQK3UGCUBFIWqhC\u002BJhfuZvHWlJZHHjp3lbfAn\u002BT51m714/jV86jebUHNZ6iDIE7TOAPKHARIqkBsmpoLOFLglOEG5BioDfEm10BtPFTy8qA\u002Bhz/K/kJ1ds5BPNLqKxI3FqVkOSl9XUZaRrSQjv/2aetCF4oIL77twNye2nzhLytb6DVix3kwM4DmHpvCgffOYjixqKDFQtFTHw4gZnDMxgeGG6AQb/mMI\u002BQm7gB7AyNfIZq1sIT9/Ku53dh4coCNrdvxomPTyAX5jD33Rx6i70oXSuhp7snA4oMmMN62hiqDZlLucuTqoXQ//AYZYrQKAMVK9TWaoijGGNvjKFULmH/R/shEtGAaUlpGxrD7i3TluUi7AqF7AslNiGL0AJ3v7IbN5dvYvzoOC4uXERbSxtyUQ6F1gK2dG/JYPWUwRkMewjYwaR8ztPgqWgUf/rraRybOYbr5eu4dPkSTp46iQtnLmD2m1kM76jXkP6YQoRihOEZ0KXcrLRs5Qqsxhxw9P3R7AXS/d088sURTB6fRJqkEDGlTTAHJKPorHsQ4QZjZLuSYPGTj4YT1ay6Vn0E5lSvoaalDWCzTmU\u002BTenkPwA8Drtfs0dgNLcYTREyztwuO2BOaLNJ0Lcp1P\u002BCGV1PmUS3nLkaRpRuZD9yemRhk59MYujFoWwlyaY18tbIE2F0XFzxGO2NnbkIOQVtvXuZFh\u002BaOIS9\u002B/Ziz9gejLw98h\u002BwzOyMcnA3HWh\u002BuXuuXa\u002B\u002B9uuf63F1gW7YRxZu19TH1hrzh2zHthx2vvo6KsunfxjcWhnLgDc6f98ovJcDvwWBH6GJNyGyQgjjUSG4R6LUyCtGokpZCQQkGusE927Nfj/YX9nngJcXO76KjHiX\u002BcweKcOpIj7ninOuDefUhrmhnaTe5VHT8qit\u002BpS1Z6iRGWpumlqXYerO9NCzpS8t7yka8C9L2m0aWMo\u002BTAAAAABJRU5ErkJggg==",
+              "WhenOpened": "2024-11-25T11:51:44.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "requirements.txt",
+              "DocumentMoniker": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\Django\\requirements.txt",
+              "RelativeDocumentMoniker": "Django\\requirements.txt",
+              "ToolTip": "C:\\Users\\\u0418\u0440\u0438\u043D\u0430\\Desktop\\text\\Textorcist\\Django\\requirements.txt",
+              "RelativeToolTip": "Django\\requirements.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-11-25T10:35:32.126Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

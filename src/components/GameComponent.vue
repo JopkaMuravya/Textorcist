@@ -1,19 +1,26 @@
 <template>
-  <div id="game-container" :class="{ 'error-shake': isError }">
-    <div id="word-container" :class="{ error: isError }">
-      <span
-        v-for="(letter, index) in currentWord"
-        :key="index"
-        :class="{ correct: index < typedWord.length }"
-      >
-        {{ letter }}
-      </span>
+    <div id="game-container" :class="{ 'error-shake': isError }">
+        <div id="live-container">
+            <img v-for="(heart, index) in hearts.slice().reverse()"
+                 :key="index"
+                 :src="heart.broken ? deadheartImage : liveheartImage"
+                 :class="{ deadheart: heart.broken }"
+                 class="liveheart" />
+        </div>
+        <div id="word-container" :class="{ error: isError }">
+            <span v-for="(letter, index) in currentWord"
+                  :key="index"
+                  :class="{ correct: index < typedWord.length }">
+                {{ letter }}
+            </span>
+        </div>
+        <div id="character">
+            <img src="@/assets/main_character.png" alt="Персонаж" />
+        </div>
+        <button @click="$router.push('/')">Вернуться в меню</button>
+        <div id="score">Счёт: {{ score }}</div>
+
     </div>
-    <div id="character">
-      <img src="@/assets/main_character.png" alt="Персонаж" />
-    </div>
-    <button @click="$router.push('/')">Вернуться в меню</button>
-  </div>
 </template>
 
 <script>
@@ -33,6 +40,10 @@ export default {
       currentWord: [],
       typedWord: "",
       isError: false,
+      score: 0,
+      hearts: [ { broken: false }, { broken: false }, { broken: false } ],
+      liveheartImage: require('@/assets/live.png'),
+      deadheartImage: require('@/assets/dead.png'),
     };
   },
   methods: {
@@ -49,11 +60,16 @@ export default {
       if (input === this.currentWord[currentLetterIndex]) {
         this.typedWord += input;
         if (this.typedWord === this.currentWord.join("")) {
+          this.score += 10
           this.generateWord();
         }
       } else {
-        this.showError();
+        //this.showError();
         this.typedWord = "";
+        if (this.score > 0) {
+          this.score -= 5;
+        }
+        this.showError();
       }
     },
     showError() {
@@ -61,6 +77,23 @@ export default {
       setTimeout(() => {
         this.isError = false;
       }, 500);
+
+      const lifeIndex = this.hearts.findIndex(heart => !heart.broken);
+      if (lifeIndex !== -1) {
+
+        this.hearts[lifeIndex].broken = true;
+
+        setTimeout(() => {
+          this.hearts.splice(lifeIndex, 1);
+          if (this.hearts.length === 0) {
+            const scoree = this.score;
+            //console.log('Game Over! Score:', scoree);
+            this.$router.push({ name: 'GameOver', query: { score: scoree } });
+          }
+
+        }, 500);
+
+      }
     },
   },
   mounted() {
@@ -116,9 +149,31 @@ export default {
   }
 }
 
+#live-container {
+    position: absolute;
+    display: flex;
+    left: 7px;
+    top: 10px;
+}
+
+.liveheart {
+    width: 40px;
+    height: auto;
+    margin-right: 3px;
+}
+
+.deadheart {
+    animation: dying 0.5s forwards; 
+}
+
+@keyframes dying {
+    transform: scale(0.5);
+    opacity: 0; 
+}
+
 #word-container {
   position: absolute;
-  top: 35%;
+  top: 38%;
   font-size: 15px;
   line-height: 1;
   font-weight: 400;
@@ -151,6 +206,7 @@ export default {
 }
 
 #character {
+  margin-top: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -158,7 +214,7 @@ export default {
 }
 
 #character img {
-  width: 120px;
+  width: 170px;
   height: auto;
 }
 
@@ -177,5 +233,15 @@ button {
 
 button:hover {
   background-color: rgba(255, 255, 255, 1);
+}
+
+#score {
+    position: absolute;
+    right: 30px;
+    bottom: 25px;
+    background-color: black;
+    color: azure;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
 }
 </style>

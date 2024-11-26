@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import MainMenu from '../components/MainMenu.vue';
 import GameComponent from '../components/GameComponent.vue';
 import UserRegister from '../components/UserRegister.vue';
+import GameOver from '../components/GameOver.vue';
 
 const routes = [
   {
@@ -18,6 +19,12 @@ const routes = [
     path: '/register',
     name: 'Register',
     component: UserRegister
+  },
+  {
+    path: '/gameover',
+    name: 'GameOver',
+    component: GameOver,
+    props: true
   }
 ];
 
