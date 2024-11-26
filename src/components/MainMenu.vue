@@ -1,12 +1,3 @@
-<!-- <template>
-  <div class="main-menu">
-    <h1>Главное меню</h1>
-    <button @click="$router.push('/game')">Начать игру</button>
-    <button @click="openSettings">Настройки</button>
-    <button @click="$router.push('/register')">Зарегистрироваться</button>
-    <button @click="exitGame">Выход</button>
-  </div>
-</template> -->
 <template>
   <div class="main-menu">
     <div class="player-cont"><img src="@/assets/main_character.png" alt="Персонаж" class="player"/></div>
