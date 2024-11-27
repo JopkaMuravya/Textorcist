@@ -1,9 +1,9 @@
 <template>
   <div id="main-menu-container">
-    <audio ref="backgroundAudio" loop>
+    <!-- <audio ref="backgroundAudio" loop>
       <source src="@/assets/background-music.mp3" type="audio/mpeg">
       Ваш браузер не поддерживает аудио.
-    </audio>
+    </audio> -->
     <div id="user-info" @click="logout">
       <img :src="user.avatar" alt="Avatar" />
       <div>
@@ -105,23 +105,6 @@ export default {
 #main-menu-container {
   display: flex;
   flex-direction: column;
-  bottom: 50px;
-
-  padding-left: auto;
-  padding-right: auto;
-  width: 100%;
-
-  position: absolute;
-}
-.btn-cont-div {
-  padding-left: 15%;
-  padding-right: 15%;
-  margin-top: 20px;
-}
-#bottom-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: center;
   justify-content: center;
   height: 100vh;
