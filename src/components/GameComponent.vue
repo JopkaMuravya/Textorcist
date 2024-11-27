@@ -15,11 +15,11 @@
             </span>
         </div>
         <div id="character">
-            <img src="@/assets/main_character.png" alt="Персонаж" />
+            <img src="@/assets/main_character.png" alt="Персонаж" draggable="false"/>
         </div>
         <div id="score">Счёт: {{ score }}</div>
         <div v-for="(enemy, index) in enemies" :key="index" class="enemy" :style="{ left: enemy.x + 'px', top: enemy.y + 'px' }">
-          <img :src="enemyImage" alt="Враг" />
+          <img :src="enemyImage" alt="Враг" draggable="false"/>
         </div>
 
         <div v-if="isPaused" class="modal">
@@ -269,6 +269,7 @@ export default {
   overflow: hidden;
   font-family: "Press Start 2P", sans-serif;
   position: relative;
+  user-select: none;
 }
 
 #game-container.error-shake {

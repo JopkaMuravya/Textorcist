@@ -90,6 +90,7 @@
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
+    user-select: none;
   }
   
   #login-container::after {

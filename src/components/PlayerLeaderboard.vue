@@ -77,6 +77,7 @@
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
+    user-select: none;
   }
   
   #leaderboard-container::after {
