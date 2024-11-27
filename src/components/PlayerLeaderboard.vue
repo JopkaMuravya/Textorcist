@@ -21,12 +21,13 @@
           </tr>
         </tbody>
       </table>
-      <button @click="$router.push('/')">Назад в главное меню</button>
+      <button @click="navigateToMenu">Назад в главное меню</button>
     </div>
   </template>
   
   <script>
   import axios from "axios";
+  import { mapActions } from 'vuex';
   
   export default {
     data() {
@@ -48,6 +49,13 @@
       } catch (error) {
         console.error("Ошибка загрузки данных рейтинга:", error);
       }
+    },
+    methods: {
+      ...mapActions(['playClickSound']), 
+      navigateToMenu() {
+        this.playClickSound(); 
+        this.$router.push('/');
+      },
     },
   };
   </script>

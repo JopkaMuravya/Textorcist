@@ -2,21 +2,22 @@
     <div id="login-container">
       <div id="login-link-container">
         <p>Нет аккаунта?</p>
-        <button @click="$router.push('/register')">Зарегистрироваться</button>
+        <button @click="navigateToReg">Зарегистрироваться</button>
       </div>
       <h1 id="login-title">Вход</h1>
       <form @submit.prevent="login">
         <input type="text" v-model="username" placeholder="Имя пользователя" required />
         <input type="password" v-model="password" placeholder="Пароль" required />
-        <button type="submit">Войти</button>
+        <button type="submit" @click="navigateToLogin">Войти</button>
       </form>
-      <button @click="$router.push('/')">Назад в главное меню</button>
+      <button @click="navigateToMenu">Назад в главное меню</button>
       <div v-if="message" id="login-message">{{ message }}</div>
     </div>
   </template>
   
   <script>
   import axios from "axios";
+  import { mapActions } from 'vuex';
   
   export default {
     data() {
@@ -27,6 +28,18 @@
       };
     },
     methods: {
+      ...mapActions(['playClickSound']),
+      navigateToLogin() {
+        this.playClickSound();
+      },
+      navigateToReg() {
+        this.playClickSound();
+        this.$router.push('/register');
+      },
+      navigateToMenu() {
+        this.playClickSound();
+        this.$router.push('/');
+      },
       async login() {
         try {
           await axios.post("http://127.0.0.1:8000/api/token/", {

@@ -2,22 +2,23 @@
   <div id="registration-container">
     <div id="login-link-container">
       <p>Уже есть аккаунт?</p>
-      <button @click="$router.push('/login')">Войти</button>
+      <button @click="navigateToLogin">Войти</button>
     </div>
     <h1 id="registration-title">Регистрация</h1>
     <form @submit.prevent="register">
       <input type="text" v-model="username" placeholder="Имя пользователя" required />
       <input type="email" v-model="email" placeholder="Email" required />
       <input type="password" v-model="password" placeholder="Пароль" required />
-      <button type="submit">Зарегистрироваться</button>
+      <button type="submit" @click="navigateToReg">Зарегистрироваться</button>
     </form>
-    <button @click="$router.push('/')">Назад в главное меню</button>
+    <button @click="navigateToMenu">Назад в главное меню</button>
     <div v-if="message" id="registration-message">{{ message }}</div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import { mapActions } from 'vuex';
 
 export default {
   data() {
@@ -29,6 +30,18 @@ export default {
     };
   },
   methods: {
+    ...mapActions(['playClickSound']), 
+    navigateToLogin() {
+      this.playClickSound(); 
+      this.$router.push('/login');
+    },
+    navigateToReg() {
+      this.playClickSound(); 
+    },
+    navigateToMenu() {
+      this.playClickSound();
+      this.$router.push('/');
+    },
     async register() {
       try {
         const response = await axios.post("http://127.0.0.1:8000/api/users/", {
