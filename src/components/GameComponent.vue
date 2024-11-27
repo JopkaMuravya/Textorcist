@@ -17,7 +17,6 @@
         <div id="character">
             <img src="@/assets/main_character.png" alt="Персонаж" />
         </div>
-        <button @click="goToMenu">Вернуться в меню</button>
         <div id="score">Счёт: {{ score }}</div>
         <div v-for="(enemy, index) in enemies" :key="index" class="enemy" :style="{ left: enemy.x + 'px', top: enemy.y + 'px' }">
           <img :src="enemyImage" alt="Враг" />
@@ -27,7 +26,7 @@
             <div class="modal-content">
                 <h2>Пауза</h2>
                 <button @click="togglePause">Продолжить</button>
-                <button @click="$router.push('/')">Выход</button>
+                <button @click="goToMenu">Выход</button>
             </div>
         </div>
 
@@ -60,6 +59,8 @@ export default {
       // enemies
       enemies: [],
       enemyImage: require('@/assets/book.png'),
+      soundDeath: require('@/assets/dead-sound1.mp3'),
+      soundBite: require('@/assets/dead-sound4.mp3'),
       enemySpeed: 1,
 
       // pause
@@ -72,7 +73,16 @@ export default {
       this.playClickSound(); 
       this.$router.push('/');
     },
+    playDeathSound() {
+      const audio = new Audio(this.soundDeath);
+      audio.play();
+    },
+    playBiteSound() {
+      const audio = new Audio(this.soundBite);
+      audio.play();
+    },
     togglePause() {
+      this.playClickSound(); 
       this.isPaused = !this.isPaused;
     },
     generateWord() {
@@ -93,6 +103,7 @@ export default {
           this.typedWord += input;
           if (this.typedWord === this.currentWord.join("")) {
             this.score += 10
+            this.playDeathSound();
             this.enemies.splice(0, 1)
             this.generateWord();
           }
@@ -201,9 +212,11 @@ export default {
         }
 
         if (enemy.x >= window.innerWidth / 2 - 120 && enemy.x <= window.innerWidth / 2 - 75 && enemy.y >= window.innerHeight / 2 - 50 && enemy.y <= window.innerHeight / 2 + 50) {
+          //this.playDeathSound();
           this.enemies.splice(index, 1);
           const lifeIndex = this.hearts.findIndex(heart => !heart.broken);
           if (lifeIndex !== -1) {
+            this.playBiteSound();
             this.hearts[lifeIndex].broken = true;
             setTimeout(() => {
               this.hearts.splice(lifeIndex, 1);

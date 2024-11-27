@@ -3,7 +3,7 @@
     <h1 id="settings-title">Настройки</h1>
     <form @submit.prevent="settings">
       <button class="settings-button" @click="navigateToAudio">Звук</button>
-      <button class="settings-button" @click="navigateToAccount">Редактировать профиль</button>
+      <!--<button class="settings-button" @click="navigateToAccount">Редактировать профиль</button>-->
     </form>
     <button class="menu-button" @click="navigateToMainMenu">Назад в главное меню</button>
   </div>
@@ -15,18 +15,18 @@ import { mapActions } from 'vuex';
 export default {
   name: 'UserSettings',
   methods: {
-    ...mapActions(['playClickSound']), // Подключаем действие для воспроизведения звука нажатия
+    ...mapActions(['playClickSound']), 
     navigateToAudio() {
-      this.playClickSound(); // Воспроизводим звук нажатия
-      this.$router.push('/audio'); // Переход на страницу звука
+      this.playClickSound(); 
+      this.$router.push('/audio');
     },
     navigateToAccount() {
-      this.playClickSound(); // Воспроизводим звук нажатия
-      this.$router.push('/account'); // Переход на страницу редактирования профиля
+      this.playClickSound();
+      this.$router.push('/account');
     },
     navigateToMainMenu() {
-      this.playClickSound(); // Воспроизводим звук нажатия
-      this.$router.push('/'); // Переход на главное меню
+      this.playClickSound(); 
+      this.$router.push('/'); 
     }
   }
 }
@@ -76,7 +76,7 @@ border-bottom: 2px dashed gray;
 padding-bottom: 5px;
 margin-bottom: 10px;
 text-align: center;
-margin-top: -30px;
+margin-top: -60px;
 }
   
 form {

@@ -4,7 +4,6 @@ import GameComponent from '../components/GameComponent.vue';
 import UserRegister from '../components/UserRegister.vue';
 import GameOver from '../components/GameOver.vue';
 import UserSettings from '../components/UserSettings.vue';
-import UserAccount from '../components/UserAccount.vue';
 import UserAudio from '../components/UserAudio.vue';
 
 const routes = [
@@ -33,11 +32,6 @@ const routes = [
     path: '/settings',
     name: 'UserSettings',
     component: UserSettings
-  },
-  {
-    path: '/account',
-    name: 'UserAccount',
-    component: UserAccount
   },
   {
     path: '/audio',
