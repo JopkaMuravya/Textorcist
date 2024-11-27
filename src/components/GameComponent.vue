@@ -428,6 +428,6 @@ button:hover {
   color: white;
   cursor: pointer;
   transition: background-color 0.3s;
-  font-family: "Press Start 2P", sans-serif;;
+  font-family: "Press Start 2P", sans-serif;
 }
 </style>
