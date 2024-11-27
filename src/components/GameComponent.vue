@@ -225,7 +225,7 @@ export default {
                 //console.log('Game Over! Score:', scoree);
                 this.$router.push({ name: 'GameOver', query: { score: scoree } });
               }
-            }, 500);
+            }, 150);
           }
         }
       });
