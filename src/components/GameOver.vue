@@ -3,15 +3,17 @@
     <h1>Игра окончена!</h1>
     <h2>Счёт: {{ localScore }}</h2>
     <div id="begin">
-      <button @click="$router.push('/game')">Начать заново</button>
+      <button @click="restartGame">Начать заново</button>
     </div>
     <div id="menu">
-      <button @click="$router.push('/')">Меню</button>
+      <button @click="goToMenu">Меню</button>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   name: "GameOver",
   props: {
@@ -25,10 +27,19 @@ export default {
       localScore: this.score
     };
   },
+  methods: {
+    ...mapActions(['playClickSound']), // Подключаем действие для воспроизведения звука нажатия
+    restartGame() {
+      this.playClickSound(); // Воспроизводим звук нажатия
+      this.$router.push('/game'); // Переход на игру
+    },
+    goToMenu() {
+      this.playClickSound(); // Воспроизводим звук нажатия
+      this.$router.push('/'); // Переход на главное меню
+    }
+  },
   mounted() {
     const score = this.$route.query.score;
-    //console.log('Received score:', score);
-
     if (score) {
       this.localScore = Number(score); 
     }

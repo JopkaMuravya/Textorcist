@@ -17,13 +17,14 @@
         <div id="character">
             <img src="@/assets/main_character.png" alt="Персонаж" />
         </div>
-        <button @click="$router.push('/')">Вернуться в меню</button>
+        <button @click="goToMenu">Вернуться в меню</button>
         <div id="score">Счёт: {{ score }}</div>
 
     </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 export default {
   name: "GameComponent",
   data() {
@@ -47,6 +48,11 @@ export default {
     };
   },
   methods: {
+    ...mapActions(['playClickSound']),
+    goToMenu() {
+      this.playClickSound(); 
+      this.$router.push('/'); 
+    },
     generateWord() {
       const randomIndex = Math.floor(Math.random() * this.words.length);
       this.currentWord = this.words[randomIndex].split("");

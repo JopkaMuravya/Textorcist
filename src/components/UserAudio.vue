@@ -1,23 +1,61 @@
 <template>
-    <div id="audio-container">
+  <div id="audio-container">
+    <div class="header">
       <h1 id="audio-title">Звук</h1>
-      <form @submit.prevent="audio">
-          <button class="max-button">
-              <img src="@/assets/max.png" alt="Макс" class="button-icon" />
-          </button>
-          <button class="min-button">
-              <img src="@/assets/none.png" alt="Мин" class="button-icon" />
-          </button>
-          <button class="plus-button">
-              <img src="@/assets/plus.png" alt="Плюс" class="button-icon" />
-          </button>
-          <button class="minus-button">
-              <img src="@/assets/minus.png" alt="Минус" class="button-icon" />
-          </button>
-      </form>
-      <button class="menu-button" @click="$router.push('/settings')">Назад</button>
+      <img :src="isMuted ? require('@/assets/none.png') : require('@/assets/max.png')" alt="Sound Icon" class="sound-icon" />
     </div>
+    <div class="form">
+      <button class="max-button" @click="toggleMute">{{ isMuted ? 'Включить звук' : 'Выключить звук' }}</button>
+      <input type="range" min="0" max="1" step="0.01" v-model="localVolume" @input="updateVolume">
+    </div>
+    <button class="menu-button" @click="navigateToSettings">Назад</button>
+  </div>
 </template>
+
+<script>
+import { mapState, mapMutations, mapActions } from 'vuex';
+
+export default {
+  data() {
+    return {
+      localVolume: this.volume, 
+    };
+  },
+  computed: {
+    ...mapState(['volume', 'isMuted']),
+  },
+  methods: {
+    ...mapMutations(['setVolume', 'mute', 'unmute']),
+    ...mapActions(['playClickSound']), 
+    toggleMute() {
+      this.playClickSound();
+      if (this.isMuted) {
+        this.unmute();
+      } else {
+        this.mute();
+      }
+    },
+    updateVolume() {
+      this.setVolume(this.localVolume);
+      this.playClickSound();
+    },
+    navigateToSettings() {
+      this.playClickSound(); 
+      this.$router.push('/settings'); 
+    },
+  },
+  watch: {
+    volume(newVolume) {
+      this.localVolume = newVolume;
+    },
+  },
+  mounted() {
+    this.localVolume = this.volume; 
+    this.$store.dispatch('playBackgroundMusic'); 
+  },
+}
+</script>
+
   
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
@@ -54,7 +92,15 @@ position: relative;
 z-index: 2;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
+  max-width: 320px; /* Максимальная ширина для заголовка */
+}
+ 
+
 #audio-title {
 color: white;
 font-size: 24px;
@@ -66,14 +112,21 @@ margin-bottom: 10px;
 text-align: center;
 margin-top: -30px;
 }
+
+.sound-icon {
+width: 70px;
+height: auto; 
+margin-left: 10px;
+margin-top: -40px;
+}
   
-form {
+.form {
 display: flex;
-flex-direction: row;
+flex-direction: column;
 justify-content: center;
 align-items: center;
 width: 320px;
-margin: 0 auto;
+margin: 0 20px;
 }
   
   
@@ -88,7 +141,7 @@ border-radius: 10px;
 cursor: pointer;
 background-color: transparent;
 transition: background-color 0.3s ease, transform 0.2s ease;
-margin: 30px 10px;
+margin: 30px 0;
 }
   
 button:hover {
@@ -96,57 +149,52 @@ transform: scale(1.05);
 }
   
 .max-button {
-display: flex;
-align-items: center;
-border: none;
-padding: 0;
-cursor: pointer;
-background-color: none;
+background-color: rgba(255, 255, 255, 0.85);
+color: #555;
+width: auto;
+padding: 10px 20px;
+text-align: center;
+width: 250px;
 }
 
-.min-button {
-display: flex;
-align-items: center;
-border: none;
-padding: 0;
-cursor: pointer;
-background-color: none;
-}
-
-.plus-button {
-display: flex;
-align-items: center;
-border: none;
-padding: 0;
-cursor: pointer;
-background-color: none;
-}
-
-.minus-button {
-display: flex;
-align-items: center;
-border: none;
-padding: 0;
-cursor: pointer;
-background-color: none;
-}
-
-.button-icon {
-width: 80px;
-height: auto; 
-}
-  
 .menu-button {
 background-color: #444;
 color: white;
 width: auto;
 padding: 10px 20px;
 text-align: center;
-margin-top: -10px;
+margin-top: 20px;
 }
   
 .menu-button:hover {
 background-color: #666;
 }
 
-</style>  
+input[type="range"] {
+  width: 100%;
+  height: 20px;
+  margin: 10px;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 10px;
+  background: #ccc;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #666;
+  cursor: pointer;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #666;
+  cursor: pointer;
+}
+
+</style>

@@ -1,13 +1,36 @@
 <template>
-    <div id="settings-container">
-      <h1 id="settings-title">Настройки</h1>
-      <form @submit.prevent="settings">
-        <button class="settings-button" @click="$router.push('/audio')">Звук</button>
-        <button class="settings-button" @click="$router.push('/account')">Редактировать профиль</button>
-      </form>
-      <button class="menu-button" @click="$router.push('/')">Назад в главное меню</button>
-    </div>
+  <div id="settings-container">
+    <h1 id="settings-title">Настройки</h1>
+    <form @submit.prevent="settings">
+      <button class="settings-button" @click="navigateToAudio">Звук</button>
+      <button class="settings-button" @click="navigateToAccount">Редактировать профиль</button>
+    </form>
+    <button class="menu-button" @click="navigateToMainMenu">Назад в главное меню</button>
+  </div>
 </template>
+
+<script>
+import { mapActions } from 'vuex';
+
+export default {
+  name: 'UserSettings',
+  methods: {
+    ...mapActions(['playClickSound']), // Подключаем действие для воспроизведения звука нажатия
+    navigateToAudio() {
+      this.playClickSound(); // Воспроизводим звук нажатия
+      this.$router.push('/audio'); // Переход на страницу звука
+    },
+    navigateToAccount() {
+      this.playClickSound(); // Воспроизводим звук нажатия
+      this.$router.push('/account'); // Переход на страницу редактирования профиля
+    },
+    navigateToMainMenu() {
+      this.playClickSound(); // Воспроизводим звук нажатия
+      this.$router.push('/'); // Переход на главное меню
+    }
+  }
+}
+</script>
   
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");

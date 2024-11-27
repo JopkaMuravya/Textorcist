@@ -4,23 +4,25 @@
       <source src="@/assets/background-music.mp3" type="audio/mpeg">
       Ваш браузер не поддерживает аудио.
     </audio>
-    <div class="player-cont"><img src="@/assets/main_character.png" alt="Персонаж" class="player"/></div>
+    <div class="player-cont">
+      <img src="@/assets/main_character.png" alt="Персонаж" class="player"/>
+    </div>
     <div id="button-container">
       <div id="upper-container" class="btn-cont-div">
-        <button class = "menu-button" @click="$router.push('/register')">Регистрация</button>
+        <button class="menu-button" @click="navigateToRegister">Регистрация</button>
       </div>
       <div id="middle-container" class="btn-cont-div">
-        <button class = "menu-button">Таблица лидеров</button>
+        <button class="menu-button" @click="playClickSound">Таблица лидеров</button>
       </div>
       <div id="bottom-container" class="btn-cont-div">
         <div id="bottom-left">
-          <button class = "menu-button" @click="$router.push('/settings')">Настройки</button>
+          <button class="menu-button" @click="navigateToSettings">Настройки</button>
         </div>
         <div id="bottom-middle">
-          <button class = "menu-button startgame-btn" @click="$router.push('/game')">Начать игру</button>
+          <button class="menu-button startgame-btn" @click="navigateToGame">Начать игру</button>
         </div>
         <div id="bottom-right">
-          <button class = "menu-button" @click="exitGame">Выход</button>
+          <button class="menu-button" @click="exitGame">Выход</button>
         </div>
       </div>
     </div>
@@ -28,26 +30,36 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex';
+
 export default {
   name: 'MainMenu',
+  computed: {
+    ...mapState(['isMuted', 'volume']),
+  },
   methods: {
+    ...mapActions(['playClickSound']), // Подключаем действие для воспроизведения звука нажатия
     exitGame() {
-      // Логика для выхода из игры
       window.close();
     },
-    playBackgroundMusic() {
-      this.$refs.backgroundAudio.play();
+    navigateToRegister() {
+      this.playClickSound(); // Воспроизводим звук нажатия
+      this.$router.push('/register');
     },
-    stopBackgroundMusic() {
-      this.$refs.backgroundAudio.pause();
-      this.$refs.backgroundAudio.currentTime = 0; // Сбросить время воспроизведения
+    navigateToSettings() {
+      this.playClickSound(); // Воспроизводим звук нажатия
+      this.$router.push('/settings');
+    },
+    navigateToGame() {
+      this.playClickSound(); // Воспроизводим звук нажатия
+      this.$router.push('/game');
+    },
+    playMusic() {
+      this.$store.dispatch('playBackgroundMusic'); // Вызов действия Vuex для воспроизведения музыки
     }
   },
   mounted() {
-    this.playBackgroundMusic(); // Воспроизвести музыку при монтировании компонента
-  },
-  beforeUnmount() {
-    this.stopBackgroundMusic(); // Остановить музыку при уничтожении компонента
+    this.playMusic(); // Воспроизвести музыку при монтировании компонента
   }
 }
 </script>
