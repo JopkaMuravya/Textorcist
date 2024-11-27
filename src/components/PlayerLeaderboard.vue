@@ -10,7 +10,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(player, index) in players.slice(0, 10)" :key="index">
+          <tr
+            v-for="(player, index) in players.slice(0, 10)"
+            :key="index"
+            :class="{ 'highlight-row': player.name === currentUserName }"
+          >
             <td>{{ index + 1 }}</td>
             <td>{{ player.name }}</td>
             <td>{{ player.record }}</td>
@@ -22,24 +26,31 @@
   </template>
   
   <script>
-  import axios from 'axios';
+  import axios from "axios";
   
   export default {
     data() {
       return {
-        players: [], 
+        players: [],
+        currentUserName: "", 
       };
     },
     async created() {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/leaderboard/');
+        const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+        if (currentUser) {
+          this.currentUserName = currentUser.name;
+        }
+        const response = await axios.get(
+          "http://127.0.0.1:8000/api/leaderboard/"
+        );
         this.players = response.data.sort((a, b) => b.record - a.record); 
       } catch (error) {
-        console.error('Ошибка загрузки данных рейтинга:', error);
+        console.error("Ошибка загрузки данных рейтинга:", error);
       }
     },
   };
-  </script>  
+  </script>
   
   <style scoped>
   @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
@@ -103,7 +114,8 @@
     color: white;
   }
   
-  th, td {
+  th,
+  td {
     padding: 15px;
     text-align: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -116,6 +128,14 @@
   tbody tr:hover {
     background-color: rgba(0, 0, 0, 0.1);
   }
+  
+  .highlight-row {
+  background-color: rgba(255, 215, 0, 0.7); 
+  font-weight: bold;
+  color: black; 
+  border: 2px solid #FFD700; 
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.8); 
+}
   
   button {
     margin-top: 20px;
