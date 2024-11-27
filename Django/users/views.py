@@ -1,8 +1,11 @@
-from rest_framework import viewsets, status
-from rest_framework.response import Response
-from rest_framework.views import APIView
+from rest_framework import viewsets
 from rest_framework.permissions import AllowAny
 from .serializers import UserSerializer
+from django.shortcuts import get_object_or_404
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from django.contrib.auth.models import User
 from .models import UserProfile
 
 
@@ -40,3 +43,9 @@ class LeaderboardAPIView(APIView):
             for profile in leaderboard
         ]
         return Response(data)
+
+class GetRecordView(APIView):
+    def get(self, request, username):
+        user = get_object_or_404(User, username=username)
+        profile = get_object_or_404(UserProfile, user=user)
+        return Response({"record": profile.record}, status=status.HTTP_200_OK)

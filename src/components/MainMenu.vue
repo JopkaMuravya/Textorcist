@@ -51,7 +51,21 @@ export default {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
     if (currentUser) {
       this.user.name = currentUser.name || "Анонимус";
-      this.user.avatar = require("@/assets/default_avatar.png"); 
+      this.user.avatar = require("@/assets/default_avatar.png");
+
+      fetch(`http://127.0.0.1:8000/api/get-record/${encodeURIComponent(this.user.name)}/`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("Ошибка запроса");
+          }
+          return response.json();
+        })
+        .then(data => {
+          this.user.record = data.record;
+        })
+        .catch(error => {
+          console.error("Ошибка получения личного рекорда:", error);
+        });
     }
   },
 };

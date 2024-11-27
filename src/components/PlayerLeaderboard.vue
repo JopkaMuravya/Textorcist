@@ -10,7 +10,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(player, index) in players" :key="index">
+          <tr v-for="(player, index) in players.slice(0, 10)" :key="index">
             <td>{{ index + 1 }}</td>
             <td>{{ player.name }}</td>
             <td>{{ player.record }}</td>
@@ -33,13 +33,13 @@
     async created() {
       try {
         const response = await axios.get('http://127.0.0.1:8000/api/leaderboard/');
-        this.players = response.data; 
+        this.players = response.data.sort((a, b) => b.record - a.record); 
       } catch (error) {
         console.error('Ошибка загрузки данных рейтинга:', error);
       }
     },
   };
-  </script>
+  </script>  
   
   <style scoped>
   @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
