@@ -82,6 +82,7 @@ export default {
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  user-select: none;
 }
 
 #registration-container::after {
@@ -141,6 +142,7 @@ export default {
   padding-bottom: 5px;
   margin-bottom: 20px;
   text-align: center;
+  user-select: none;
 }
 
 form {
@@ -181,6 +183,7 @@ button {
   color: white;
   text-transform: uppercase;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  user-select: none;
 }
 
 button:hover {

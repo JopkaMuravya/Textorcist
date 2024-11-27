@@ -2,7 +2,7 @@
   <div id="audio-container">
     <div class="header">
       <h1 id="audio-title">Звук</h1>
-      <img :src="isMuted ? require('@/assets/none.png') : require('@/assets/max.png')" alt="Sound Icon" class="sound-icon" />
+      <img :src="isMuted ? require('@/assets/none.png') : require('@/assets/max.png')" alt="Sound Icon" class="sound-icon" draggable="false" />
     </div>
     <div class="form">
       <button class="max-button" @click="toggleMute">{{ isMuted ? 'Включить звук' : 'Выключить звук' }}</button>
@@ -74,6 +74,7 @@ background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
 position: relative;
+user-select: none;
 }
   
 #audio-container::after {

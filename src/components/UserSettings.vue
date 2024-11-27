@@ -49,6 +49,7 @@ background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
 position: relative;
+user-select: none;
 }
   
 #settings-container::after {

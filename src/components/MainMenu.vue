@@ -143,6 +143,7 @@ export default {
   padding-bottom: 10px;
   margin-bottom: 30px;
   text-align: center;
+  user-select: none;
 }
 
 #main-menu-buttons {
@@ -165,6 +166,7 @@ button {
   width: 100%;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, transform 0.2s ease;
+  user-select: none;
 }
 
 button:hover {
@@ -189,7 +191,9 @@ button:active {
   font-family: "Press Start 2P", sans-serif;
   font-size: 10px; 
   gap: 10px;
-  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3); 
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+  user-select: none;
+  cursor: pointer;
 }
 
 #user-info img {
