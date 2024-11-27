@@ -1,5 +1,9 @@
 <template>
   <div class="main-menu">
+    <audio ref="backgroundAudio" loop>
+      <source src="@/assets/background-music.mp3" type="audio/mpeg">
+      Ваш браузер не поддерживает аудио.
+    </audio>
     <div class="player-cont"><img src="@/assets/main_character.png" alt="Персонаж" class="player"/></div>
     <div id="button-container">
       <div id="upper-container" class="btn-cont-div">
@@ -10,7 +14,7 @@
       </div>
       <div id="bottom-container" class="btn-cont-div">
         <div id="bottom-left">
-          <button class = "menu-button" @click="openSettings">Настройки</button>
+          <button class = "menu-button" @click="$router.push('/settings')">Настройки</button>
         </div>
         <div id="bottom-middle">
           <button class = "menu-button startgame-btn" @click="$router.push('/game')">Начать игру</button>
@@ -27,14 +31,23 @@
 export default {
   name: 'MainMenu',
   methods: {
-    openSettings() {
-      // Логика для открытия настроек
-      alert('Настройки будут реализованы позже');
-    },
     exitGame() {
       // Логика для выхода из игры
       window.close();
+    },
+    playBackgroundMusic() {
+      this.$refs.backgroundAudio.play();
+    },
+    stopBackgroundMusic() {
+      this.$refs.backgroundAudio.pause();
+      this.$refs.backgroundAudio.currentTime = 0; // Сбросить время воспроизведения
     }
+  },
+  mounted() {
+    this.playBackgroundMusic(); // Воспроизвести музыку при монтировании компонента
+  },
+  beforeUnmount() {
+    this.stopBackgroundMusic(); // Остановить музыку при уничтожении компонента
   }
 }
 </script>
