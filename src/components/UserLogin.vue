@@ -1,64 +1,67 @@
 <template>
-    <div id="login-container">
-      <div id="login-link-container">
-        <p>Нет аккаунта?</p>
-        <button @click="$router.push('/register')">Зарегистрироваться</button>
-      </div>
-      <h1 id="login-title">Вход</h1>
-      <form @submit.prevent="login">
-        <input type="text" v-model="username" placeholder="Имя пользователя" required />
-        <input type="password" v-model="password" placeholder="Пароль" required />
-        <button type="submit">Войти</button>
-      </form>
-      <button @click="$router.push('/')">Назад в главное меню</button>
-      <div v-if="message" id="login-message">{{ message }}</div>
+  <div id="login-container">
+    <div id="login-link-container">
+      <p>Нет аккаунта?</p>
+      <button @click="$router.push('/register')">Зарегистрироваться</button>
     </div>
-  </template>
-  
-  <script>
-  import axios from "axios";
-  
-  export default {
-    data() {
-      return {
-        username: "",
-        password: "",
-        message: "",
-      };
-    },
-    methods: {
-      async login() {
-        try {
-          await axios.post("http://127.0.0.1:8000/api/token/", {
-            username: this.username,
-            password: this.password,
-          });
-  
-          localStorage.setItem(
-            "currentUser",
-            JSON.stringify({
-              name: this.username,
-            })
-          );
-  
-          this.message = "Вход выполнен успешно!";
-          this.username = "";
-          this.password = "";
-  
-          this.$router.push("/");
-        } catch (error) {
-          if (error.response) {
-            this.message = "Ошибка входа: " + error.response.data.detail;
-          } else if (error.request) {
-            this.message = "Ошибка: сервер не ответил";
-          } else {
-            this.message = "Ошибка: " + error.message;
-          }
+    <h1 id="login-title">Вход</h1>
+    <form @submit.prevent="login">
+      <input type="text" v-model="username" placeholder="Имя пользователя" required />
+      <input type="password" v-model="password" placeholder="Пароль" required />
+      <button type="submit">Войти</button>
+    </form>
+    <button @click="$router.push('/')">Назад в главное меню</button>
+    <div v-if="message" id="login-message">{{ message }}</div>
+  </div>
+</template>
+
+<script>
+import axios from "axios";
+
+export default {
+  data() {
+    return {
+      username: "",
+      password: "",
+      message: "",
+    };
+  },
+  methods: {
+    async login() {
+      try {
+        const response = await axios.post("http://127.0.0.1:8000/api/token/", {
+          username: this.username,
+          password: this.password,
+        });
+
+        localStorage.setItem("accessToken", response.data.access);
+        localStorage.setItem("refreshToken", response.data.refresh);
+        localStorage.setItem(
+          "currentUser",
+          JSON.stringify({
+            name: this.username,
+          })
+        );
+
+        this.message = "Вход выполнен успешно!";
+        this.username = "";
+        this.password = "";
+
+        this.$router.push("/");
+      } catch (error) {
+        if (error.response) {
+          this.message = "Ошибка входа: " + error.response.data.detail;
+        } else if (error.request) {
+          this.message = "Ошибка: сервер не ответил";
+        } else {
+          this.message = "Ошибка: " + error.message;
         }
-      },
+      }
     },
-  };
-  </script>
+  },
+};
+</script>
+
   
   <style scoped>
   @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
