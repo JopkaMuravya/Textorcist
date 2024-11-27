@@ -10,7 +10,6 @@
           </tr>
         </thead>
         <tbody>
-          <!-- Пример для заполнения таблицы -->
           <tr v-for="(player, index) in players" :key="index">
             <td>{{ index + 1 }}</td>
             <td>{{ player.name }}</td>
@@ -23,15 +22,21 @@
   </template>
   
   <script>
+  import axios from 'axios';
+  
   export default {
     data() {
       return {
-        players: [
-          { name: "Игрок1", record: 100 },
-          { name: "Игрок2", record: 80 },
-          { name: "Игрок3", record: 50 },
-        ], 
+        players: [], 
       };
+    },
+    async created() {
+      try {
+        const response = await axios.get('http://127.0.0.1:8000/api/leaderboard/');
+        this.players = response.data; 
+      } catch (error) {
+        console.error('Ошибка загрузки данных рейтинга:', error);
+      }
     },
   };
   </script>
