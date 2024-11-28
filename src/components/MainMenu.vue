@@ -1,9 +1,9 @@
 <template>
   <div id="main-menu-container">
-    <!-- <audio ref="backgroundAudio" loop>
+    <audio ref="backgroundAudio" loop>
       <source src="@/assets/background-music.mp3" type="audio/mpeg">
       Ваш браузер не поддерживает аудио.
-    </audio> -->
+    </audio>
     <div id="user-info" @click="logout">
       <img :src="user.avatar" alt="Avatar" />
       <div>
