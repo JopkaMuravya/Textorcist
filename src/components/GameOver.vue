@@ -12,37 +12,93 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions } from "vuex";
 
 export default {
   name: "GameOver",
   props: {
     score: {
       type: Number,
-      default: 0 
-    }
+      default: 0,
+    },
   },
   data() {
     return {
-      localScore: this.score
+      localScore: this.score,
     };
   },
   methods: {
-    ...mapActions(['playClickSound']), // Подключаем действие для воспроизведения звука нажатия
+    ...mapActions(["playClickSound"]), 
+    async fetchAndUpdateRecord() {
+      try {
+        const token = localStorage.getItem("accessToken");
+        if (!token) {
+          console.error("Access token not found. Please log in.");
+          return;
+        }
+
+        const username = JSON.parse(localStorage.getItem("currentUser")).name;
+
+        const recordResponse = await fetch(
+          `http://127.0.0.1:8000/api/get-record/${encodeURIComponent(username)}/`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+
+        if (!recordResponse.ok) {
+          throw new Error("Ошибка получения текущего рекорда.");
+        }
+
+        const recordData = await recordResponse.json();
+        const currentRecord = recordData.record || 0;
+
+        console.log(`Текущий рекорд: ${currentRecord}, Локальный счёт: ${this.localScore}`);
+
+        if (this.localScore > currentRecord) {
+          console.log("Обновляем рекорд...");
+          const updateResponse = await fetch(
+            `http://127.0.0.1:8000/api/update-record/${encodeURIComponent(username)}/`,
+            {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+              },
+              body: JSON.stringify({ record: this.localScore }),
+            }
+          );
+
+          if (!updateResponse.ok) {
+            throw new Error("Ошибка обновления рекорда.");
+          }
+
+          console.log("Рекорд успешно обновлен!");
+        } else {
+          console.log("Рекорд не превышен. Обновление не требуется.");
+        }
+      } catch (error) {
+        console.error("Ошибка при работе с рекордом:", error);
+      }
+    },
     restartGame() {
-      this.playClickSound(); // Воспроизводим звук нажатия
-      this.$router.push('/game'); // Переход на игру
+      this.playClickSound(); 
+      this.$router.push("/game"); 
     },
     goToMenu() {
-      this.playClickSound(); // Воспроизводим звук нажатия
-      this.$router.push('/'); // Переход на главное меню
-    }
+      this.playClickSound(); 
+      this.$router.push("/"); 
+    },
   },
-  mounted() {
+  async mounted() {
     const score = this.$route.query.score;
     if (score) {
-      this.localScore = Number(score); 
+      this.localScore = Number(score);
     }
+
+    await this.fetchAndUpdateRecord();
   },
 };
 </script>

@@ -44,21 +44,28 @@ export default {
     },
     async register() {
       try {
+        // eslint-disable-next-line no-unused-vars
         const response = await axios.post("http://127.0.0.1:8000/api/users/", {
           username: this.username,
           email: this.email,
           password: this.password,
         });
 
+        const tokenResponse = await axios.post("http://127.0.0.1:8000/api/token/", {
+          username: this.username,
+          password: this.password,
+        });
+
+        localStorage.setItem("accessToken", tokenResponse.data.access);
+        localStorage.setItem("refreshToken", tokenResponse.data.refresh);
         localStorage.setItem(
           "currentUser",
           JSON.stringify({
-            name: response.data.username,
+            name: this.username,
           })
         );
 
         this.message = "Регистрация успешна!";
-        
         this.username = "";
         this.email = "";
         this.password = "";

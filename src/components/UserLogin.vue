@@ -42,11 +42,13 @@
       },
       async login() {
         try {
-          await axios.post("http://127.0.0.1:8000/api/token/", {
+          const response = await axios.post("http://127.0.0.1:8000/api/token/", {
             username: this.username,
             password: this.password,
           });
   
+          localStorage.setItem("accessToken", response.data.access);
+          localStorage.setItem("refreshToken", response.data.refresh);
           localStorage.setItem(
             "currentUser",
             JSON.stringify({
@@ -68,10 +70,11 @@
             this.message = "Ошибка: " + error.message;
           }
         }
-      },
+      }
     },
   };
-  </script>
+</script>
+
   
   <style scoped>
   @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
