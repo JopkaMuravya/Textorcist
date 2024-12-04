@@ -25,10 +25,22 @@ export default {
   data() {
     return {
       localScore: this.score,
+      soundWin: require('@/assets/win6.mp3'),
     };
   },
   methods: {
-    ...mapActions(["playClickSound"]), 
+    ...mapActions(["playClickSound", "stopBackgroundMusic", "playBackgroundMusic"]),
+    playWinSound() {
+      this.winSoundAudio = new Audio(this.soundWin); 
+      this.winSoundAudio.play(); 
+    },
+        
+    stopWinSound() {
+      if (this.winSoundAudio) {
+        this.winSoundAudio.pause(); 
+        this.winSoundAudio.currentTime = 0; 
+      }
+    },
     async fetchAndUpdateRecord() {
       try {
         const token = localStorage.getItem("accessToken");
@@ -97,8 +109,21 @@ export default {
     if (score) {
       this.localScore = Number(score);
     }
+    this.$store.dispatch('stopBackgroundMusic');
+
+    this.playWinSound();
+
+    const winSoundDuration = 3000; 
+    setTimeout(async () => {
+      this.$store.dispatch('playBackgroundMusic');
+    }, winSoundDuration);
+    
 
     await this.fetchAndUpdateRecord();
+  },
+  beforeUnmount() {
+    this.stopWinSound();
+    this.$store.dispatch('playBackgroundMusic');
   },
 };
 </script>

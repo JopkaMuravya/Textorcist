@@ -59,8 +59,9 @@ export default {
       // enemies
       enemies: [],
       enemyImage: require('@/assets/book.png'),
-      soundDeath: require('@/assets/dead-sound1.mp3'),
-      soundBite: require('@/assets/dead-sound4.mp3'),
+      soundDeath: require('@/assets/correct.mp3'),
+      soundBite: require('@/assets/dead-sound2.mp3'),
+      soundError: require('@/assets/error1.mp3'),
       enemySpeed: 1,
 
       // pause
@@ -79,6 +80,10 @@ export default {
     },
     playBiteSound() {
       const audio = new Audio(this.soundBite);
+      audio.play();
+    },
+    playErrorSound() {
+      const audio = new Audio(this.soundError);
       audio.play();
     },
     togglePause() {
@@ -110,6 +115,7 @@ export default {
         } else {
           //this.showError();
           this.typedWord = "";
+          this.playErrorSound();
           if (this.score > 0) {
             this.score -= 5;
           }
