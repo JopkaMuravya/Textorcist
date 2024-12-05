@@ -38,8 +38,9 @@ import { mapActions } from 'vuex';
 import live_heart from '../assets/live.png';
 import dead_heart from '../assets/dead.png';
 import enemy_img from '../assets/book.png';
-import sound_death from '../assets/dead-sound1.mp3';
-import sound_bite from '../assets/dead-sound4.mp3';
+import sound_death from '../assets/correct.mp3';
+import sound_bite from '../assets/dead-sound2.mp3';
+import sound_error from '../assets/error1.mp3'
 
 export default {
   name: "GameComponent",
@@ -47,12 +48,19 @@ export default {
     return {
       words: [
         "арбуз", "банан", "яблоко", "груша", "персик", "пицца", "суши", "пельмени",
-        "кот", "собака", "волк", "тигр", "лев", "жираф", "слон", "попугай",
-        "река", "гора", "лес", "луна", "солнце", "ветер", "дождь", "облако",
-        "поезд", "самолет", "машина", "трамвай", "катер", "велосипед",
-        "учитель", "врач", "повар", "строитель", "полицейский", "пожарный",
-        "компьютер", "телефон", "стол", "книга", "лампа", "часы", "ручка",
-        "игра", "танец", "звезда", "мечта", "праздник", "работа", "дружба",
+          "кот", "собака", "волк", "тигр", "лев", "жираф", "слон", "попугай",
+          "река", "гора", "лес", "луна", "солнце", "ветер", "дождь", "облако",
+          "поезд", "самолет", "машина", "трамвай", "катер", "велосипед",
+          "учитель", "врач", "повар", "строитель", "полицейский", "пожарный",
+          "компьютер", "телефон", "стол", "книга", "лампа", "часы", "ручка",
+          "игра", "танец", "звезда", "мечта", "праздник", "работа", "дружба",
+          "морковь", "картошка", "апельсин", "вишня", "черешня", "кабачок", "тыква",
+          "панда", "медведь", "пингвин", "еж", "рысь", "коала", "ястреб", "утка",
+          "океан", "водопад", "пустыня", "тундра", "плато", "берег", "степь", "лагуна",
+          "автобус", "грузовик", "скейтборд", "ролики", "метро", "вертолет",
+          "доктор", "адвокат", "художник", "писатель", "музыкант", "актер",
+          "планшет", "телевизор", "стул", "тетрадь", "светильник", "зеркало", "карандаш",
+          "спорт", "музыка", "кино", "картина", "меч", "путешествие", "доброта"
       ],
       currentWord: [],
       typedWord: "",
@@ -67,6 +75,7 @@ export default {
       enemyImage: enemy_img,
       soundDeath: sound_death,
       soundBite: sound_bite,
+      soundError: sound_error,
       enemySpeed: 1,
 
       // pause
@@ -85,6 +94,10 @@ export default {
     },
     playBiteSound() {
       const audio = new Audio(this.soundBite);
+      audio.play();
+    },
+    playErrorSound() {
+      const audio = new Audio(this.soundError);
       audio.play();
     },
     togglePause() {
@@ -116,6 +129,7 @@ export default {
         } else {
           //this.showError();
           this.typedWord = "";
+          this.playErrorSound();
           if (this.score > 0) {
             this.score -= 5;
           }
