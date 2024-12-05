@@ -15,18 +15,18 @@
             </span>
         </div>
         <div id="character">
-            <img src="@/assets/main_character.png" alt="Персонаж" />
+            <img src="../assets/main_character.png" alt="Персонаж" draggable="false"/>
         </div>
         <div id="score">Счёт: {{ score }}</div>
         <div v-for="(enemy, index) in enemies" :key="index" class="enemy" :style="{ left: enemy.x + 'px', top: enemy.y + 'px' }">
-          <img :src="enemyImage" alt="Враг" />
+          <img :src="enemyImage" alt="Враг" draggable="false"/>
         </div>
 
         <div v-if="isPaused" class="modal">
             <div class="modal-content">
                 <h2>Пауза</h2>
                 <button @click="togglePause">Продолжить</button>
-                <button @click="$router.push('/')">Выход</button>
+                <button @click="goToMenu">Выход</button>
             </div>
         </div>
 
@@ -34,6 +34,13 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+import live_heart from '../assets/live.png';
+import dead_heart from '../assets/dead.png';
+import enemy_img from '../assets/book.png';
+import sound_death from '../assets/dead-sound1.mp3';
+import sound_bite from '../assets/dead-sound4.mp3';
+
 export default {
   name: "GameComponent",
   data() {
@@ -52,12 +59,14 @@ export default {
       isError: false,
       score: 0,
       hearts: [ { broken: false }, { broken: false }, { broken: false } ],
-      liveheartImage: require('@/assets/live.png'),
-      deadheartImage: require('@/assets/dead.png'),
+      liveheartImage: live_heart,
+      deadheartImage: dead_heart,
 
       // enemies
       enemies: [],
-      enemyImage: require('@/assets/book.png'),
+      enemyImage: enemy_img,
+      soundDeath: sound_death,
+      soundBite: sound_bite,
       enemySpeed: 1,
 
       // pause
@@ -65,7 +74,21 @@ export default {
     };
   },
   methods: {
+    ...mapActions(['playClickSound']),
+    goToMenu() {
+      this.playClickSound(); 
+      this.$router.push('/');
+    },
+    playDeathSound() {
+      const audio = new Audio(this.soundDeath);
+      audio.play();
+    },
+    playBiteSound() {
+      const audio = new Audio(this.soundBite);
+      audio.play();
+    },
     togglePause() {
+      this.playClickSound(); 
       this.isPaused = !this.isPaused;
     },
     generateWord() {
@@ -86,6 +109,7 @@ export default {
           this.typedWord += input;
           if (this.typedWord === this.currentWord.join("")) {
             this.score += 10
+            this.playDeathSound();
             this.enemies.splice(0, 1)
             this.generateWord();
           }
@@ -194,9 +218,11 @@ export default {
         }
 
         if (enemy.x >= window.innerWidth / 2 - 120 && enemy.x <= window.innerWidth / 2 - 75 && enemy.y >= window.innerHeight / 2 - 50 && enemy.y <= window.innerHeight / 2 + 50) {
+          //this.playDeathSound();
           this.enemies.splice(index, 1);
           const lifeIndex = this.hearts.findIndex(heart => !heart.broken);
           if (lifeIndex !== -1) {
+            this.playBiteSound();
             this.hearts[lifeIndex].broken = true;
             setTimeout(() => {
               this.hearts.splice(lifeIndex, 1);
@@ -205,7 +231,7 @@ export default {
                 //console.log('Game Over! Score:', scoree);
                 this.$router.push({ name: 'GameOver', query: { score: scoree } });
               }
-            }, 500);
+            }, 150);
           }
         }
       });
@@ -242,13 +268,14 @@ export default {
   width: 100vw;
   margin: 0;
   padding: 0;
-  background-image: url("@/assets/background.png");
+  background-image: url("../assets/background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
   font-family: "Press Start 2P", sans-serif;
   position: relative;
+  user-select: none;
 }
 
 #game-container.error-shake {
@@ -408,6 +435,6 @@ button:hover {
   color: white;
   cursor: pointer;
   transition: background-color 0.3s;
-  font-family: "Press Start 2P", sans-serif;;
+  font-family: "Press Start 2P", sans-serif;
 }
 </style>
