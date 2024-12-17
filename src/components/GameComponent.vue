@@ -26,7 +26,7 @@
             <div class="modal-content">
                 <h2>Пауза</h2>
                 <button @click="togglePause">Продолжить</button>
-                <button @click="goToMenu">Выход</button>
+                <button id="attentionButton" @click="goToMenu">Выход</button>
             </div>
         </div>
 
@@ -103,6 +103,17 @@ export default {
     togglePause() {
       this.playClickSound(); 
       this.isPaused = !this.isPaused;
+      if (this.isPaused) {
+        this.setFocusOnButton();
+      }
+    },
+    setFocusOnButton() {
+      this.$nextTick(() => {
+        const button = document.getElementById('attentionButton');
+        if (button) {
+          button.focus();
+        }
+      });
     },
     generateWord() {
       const randomIndex = Math.floor(Math.random() * this.words.length);

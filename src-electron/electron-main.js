@@ -15,9 +15,10 @@ function createWindow () {
    * Initial window options
    */
   mainWindow = new BrowserWindow({
-    icon: path.resolve(currentDir, 'icons/icon.png'), // tray icon
-    width: 1000,
-    height: 600,
+    icon: path.resolve(currentDir, 'icons/default_avatar.png'), // tray icon
+    width: 1024,
+    height: 768,
+    frame: false,
     useContentSize: true,
     webPreferences: {
       contextIsolation: true,
@@ -28,6 +29,9 @@ function createWindow () {
       )
     }
   })
+
+  mainWindow.setMenu(null);
+
 
   if (process.env.DEV) {
     mainWindow.loadURL(process.env.APP_URL)
