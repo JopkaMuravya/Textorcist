@@ -33,3 +33,9 @@
 
 ## 📸 **Скриншоты**  
 ![Снимок экрана 2024-12-18 230537](https://github.com/user-attachments/assets/94f1042f-c4e7-452d-8053-ca433844eb38)
+![Снимок экрана 2024-12-18 230555](https://github.com/user-attachments/assets/d8d8cab1-2e69-4221-b83c-53697ebc2a8e)
+![Снимок экрана 2024-12-18 230609](https://github.com/user-attachments/assets/323d9b6a-3044-4f3c-b371-762af73e52f1)
+![Снимок экрана 2024-12-18 230624](https://github.com/user-attachments/assets/5732f5a7-432b-4a61-9331-39b8cb1fc8b4)
+
+
+
